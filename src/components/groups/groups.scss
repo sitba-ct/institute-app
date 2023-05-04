@@ -1,0 +1,113 @@
+.containerGeneral {
+  height: 95vh;
+  display: block;
+  margin-top: 55px;
+}
+
+.groupsTable {
+  height: fit-content;
+  max-height: 90vmin;
+  width: 30vw !important;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  margin: 0vh 2vh 2vh 2vh;
+  border-collapse: separate;
+  display: block;
+
+  thead {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    size: 100px;
+    display: table;
+  }
+
+  tbody {
+    max-height: 60vmin;
+    width: 100%;
+    border-bottom: 0.5px solid rgb(173, 165, 165);
+    overflow-y: scroll;
+    display: block;
+    td {
+      border: 0;
+    }
+  }
+
+  tfoot {
+    height: 15%;
+    width: 100%;
+    float: right;
+
+    Button {
+      background-color: #198754;
+    }
+  }
+}
+
+.discountTable {
+  max-height: 65vmin;
+  height: fit-content;
+  width: 20vw !important;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  margin: 0vh 2vh 2vh 2vh;
+  border-collapse: separate;
+  display: block;
+
+  thead {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    size: 100px;
+    display: table;
+  }
+
+  tbody {
+    max-height: 35vmin;
+    border-bottom: 0.5px solid rgb(173, 165, 165);
+    width: 100%;
+    overflow-y: scroll;
+    display: block;
+    td {
+      border: 0;
+    }
+  }
+
+  tfoot {
+    height: 15%;
+    width: 100%;
+    float: right;
+
+    Button {
+      background-color: #198754;
+    }
+  }
+}
+
+.errorMessage {
+  // font-weight: bold;
+  color: red;
+}
+
+.inputFeeIncrease {
+  text-align: center;
+  margin-left: 16px;
+  width: 56px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.inputFeeIncrease:focus {
+  text-align: center;
+  margin-left: 16px;
+  width: 56px;
+  height: 38px;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  color: white;
+  background-color: #6c757d;
+  box-shadow: 0 0 0 4px rgb(116, 116, 116, 0.4);
+  outline: 3px;
+}

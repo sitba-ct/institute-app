@@ -1,0 +1,16 @@
+.containerSingIn {
+  background-image: url("logoKEN.jpg");
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 85vh;
+}
+
+.form {
+  margin: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.small-text {
+  color: rgb(0, 0, 0);
+}

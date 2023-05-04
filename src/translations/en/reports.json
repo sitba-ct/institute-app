@@ -1,0 +1,45 @@
+{
+  "reports": {
+    "TabNavigation": {
+      "monthlyReports": "Monthly Reports",
+      "dailyReports": "Daily Reports"
+    },
+    "incomeCategory": {
+      "incomeCategory": "Income ",
+      "days": "days ",
+      "category": "Category",
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec",
+      "total": "Total"
+    },
+    "outflowCategory": {
+      "outflowCategory": "Outflow ",
+      "days": "days ",
+
+      "category": "Category",
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec",
+      "total": "Total"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.containerGeneral {
+  max-height: 95vh;
+  height: fit-content;
+  display: block;
+}
+
+.listCoursesTable {
+  height: fit-content;
+  max-height: 95vmin;
+  width: 30vw !important;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  margin: 2vh;
+  display: block;
+
+  thead {
+    height: 15%;
+    width: 100%;
+    display: inline;
+
+    #headName {
+      width: 40%;
+    }
+    #headFee {
+      width: 60%;
+      text-align: start;
+    }
+  }
+
+  tbody {
+    max-height: 45vmin;
+    width: 100%;
+    border-bottom: 0.5px solid rgb(173, 165, 165);
+    overflow-y: scroll;
+    display: block;
+    td {
+      border: 0;
+    }
+    #bodyName {
+      width: 50%;
+      color: blue;
+      cursor: pointer;
+    }
+    #bodyFee {
+      width: 35%;
+    }
+    #bodyEdit {
+      width: 15%;
+    }
+  }
+  tfoot {
+    padding: 10px;
+    height: 15%;
+    width: 100%;
+    display: inline-flex;
+
+    Button {
+      background-color: #198754;
+    }
+  }
+}

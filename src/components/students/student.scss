@@ -1,0 +1,41 @@
+.studentContainer {
+  max-height: 95vmin;
+  max-width: 40vw;
+  max-width: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2vh;
+  padding: 1vh;
+  margin-top: 55px;
+}
+
+.studentsTable {
+  height: 100%;
+  width: 100%;
+  display: block;
+
+  thead {
+    height: 5%;
+    width: 100%;
+    text-align: start;
+    display: table;
+  }
+
+  tbody {
+    height: 60vh;
+    border-bottom: 0.5px solid rgb(228, 222, 222);
+    overflow-y: scroll;
+    display: block;
+  }
+
+  tfoot {
+    padding-top: 10px;
+    height: 15%;
+    width: 100%;
+    display: block;
+
+    Button {
+      background-color: #198754;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.incomesContainer {
+  max-height: 95vh;
+  max-width: 40vw;
+  max-height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1vh;
+  margin: 55px 2vh 2vh 2vh;
+}
+
+.searchTable {
+  height: 30vh;
+  width: 100%;
+  overflow: auto;
+  display: block;
+
+  thead {
+    height: 40px;
+    width: 100%;
+    background-color: rgba(55, 132, 210, 0.831372549);
+    position: sticky;
+    top: 0;
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}
+
+.incomeListContainer {
+  max-height: 40vh;
+  overflow-y: scroll;
+  display: block;
+  width: 100%;
+}
+
+.incomesTable {
+  height: 30vh;
+  width: 100%;
+  overflow: auto;
+  display: block;
+
+  thead {
+    height: 40px;
+    width: 100%;
+    background-color: rgba(55, 132, 210, 0.831372549);
+    position: sticky;
+    top: 0;
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}
+.incomesList {
+  position: sticky;
+  top: 35px;
+}

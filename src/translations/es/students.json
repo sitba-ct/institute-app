@@ -1,0 +1,91 @@
+{
+  "students": {
+    "search": "Buscar",
+    "searchStudents": "Buscar estudiante",
+    "surname": "apellido",
+    "students": "Estudiantes",
+    "finalPrice": "Precio final :",
+
+    "StudentSearch": {
+      "students": "Estudiantes"
+    },
+    "editStudent": {
+      "edit": "Editar",
+      "editStudent": "Editar estudiante",
+      "surname": "Apellido",
+      "close": "Cerrar",
+      "saveChanges": "Guardar"
+    },
+    "addStudent": {
+      "add": "Agregar Estudiante",
+      "newStudent": "Nuevo estudiante",
+      "surname": "Apellido",
+      "close": "Cerrar",
+      "saveChanges": "Guardar"
+    },
+    "edit-add": {
+      "Student": "Estudiante",
+      "Name": "Nombre",
+      "Surname": "Apellido",
+      "BirthDay": "Fecha de nacimiento",
+      "Course": "Curso",
+      "late-entry": "Ingreso tardio",
+      "Contact": "Contacto",
+      "phone": "Teléfono ",
+      "Email": "Email",
+      "address": "Direccion",
+      "School-Information": "Información de la escuela",
+      "School-Name": "Nombre de la escuela",
+      "School-Turn": "Grado escolar",
+      "Parent-Information": "Información de los padres"
+    },
+    "groupCourseDetails": {
+      "selectPeriodsToPay": "Seleccionar periodos a pagar",
+      "selectCourseToChangeIt": "Seleccionar curso para cambiarlo",
+      "persons": " Personas :",
+      "finalPrice": "Precio final :",
+      "paymentModalGroup": {
+        "review": "Pagar",
+        "clean": "Limpiar",
+        "newPayment": "Nuevo pago",
+        "incomeCategory": "Categoria de ingreso",
+        "amountWith": "Monto con",
+        "discount": "% descuento",
+        "close": "Cerrar",
+        "pay": "Pagar",
+        "youHaveIncompleteFiels": "Tienes datos incompletos"
+      }
+    },
+    "feeReferenceTable": {
+      "lateEntry": "Ingreso tardio",
+      "payedFee": "Cuotas pagas",
+      "lateFee": "Cuotas atrasadas",
+      "currentFee": "Cuota actual",
+      "incomingFees": "Cuotas venideras",
+      "selectedFees": "Cuotas seleccionadas"
+    },
+    "studentCourseCard": {
+      "fees": "Cuotas",
+      "finalPrice": "Precio Final :",
+      "courseChangeModal": {
+        "changeStudentCourse": "Quiere cambiar el curso del estudiante?",
+        "cancel": "Cancelar",
+        "yes": "Si",
+        "choseTheCourse": "Elegi el curso",
+        "close": "Cerrar",
+        "change": "Cambiar"
+      },
+      "paymentModal": {
+        "clean": "Borrar",
+        "review": "Pagar",
+        "newPayment": "Nuevo Pago",
+        "incomeCategory": "Tipo de ingreso",
+        "amount": "Cantidad",
+        "paymentMethod": "Metodo de Pago",
+
+        "close": "Cerrar",
+        "pay": "Pagar"
+      }
+    }
+  }
+}

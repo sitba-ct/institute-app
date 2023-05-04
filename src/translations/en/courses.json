@@ -1,0 +1,49 @@
+{
+  "courses": {
+    "changeCourseFees": "Change course fee",
+    "changeCourseFee": {
+      "coursesFee": "Courses Fee",
+      "courses": "Courses",
+      "editFeeCourseModal": {
+        "edit": "Edit",
+        "selectFeeIncrease": "Select Fee Increase (%)",
+        "course": "Course",
+        "close": "Close",
+        "saveChanges": "Save Changes"
+      }
+    },
+    "listCourse": "List courses",
+    "listCourses": {
+      "listCourses": "List courses",
+      "name": "Name",
+      "initialFee": "initialfee",
+      "addCourseAndEditCourse": {
+        "edit": "Edit",
+        "editCourse": "Edit Course",
+        "add": "Add Course",
+        "new": "New",
+        "name": "Name",
+        "startDate": "Start date",
+        "initialFee": "initial fee",
+        "duration": "Duration",
+        "close": "Close",
+        "saveChanges": "Save Changes"
+      }
+    },
+    "courseStudents": {
+      "group": "Grupo ",
+      "names": "Names",
+      "studentsName": "students Name",
+      "bookletPayment": "booklet Payment"
+    },
+    "errors": {
+      "add": {
+        "name": {
+          "necessary": "Necessary",
+          "onlyLetersAndSpaces": "Only letters and spaces",
+          "alreadyRegistered": " ya esta registrado"
+        }
+      }
+    }
+  }
+}

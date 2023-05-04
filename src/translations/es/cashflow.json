@@ -1,0 +1,70 @@
+{
+  "cashFlow": {
+    "addIncome": {
+      "addIncome": "Agregar Ingreso",
+      "newIncome": "Nuevo ingreso",
+      "amount": "Cantidad",
+      "paymentMethod": "Metodo de Pago",
+      "detail": "Detalle",
+      "dateRegistered": "Fecha de registro",
+      "category": "Categoria",
+      "chooseStudent": "Seleccionar estudiante",
+      "close": "cerrar",
+      "saveChanges": "Guardar"
+    },
+
+    "addOutflow": {
+      "addOutflow": "Agregar Egreso",
+      "newOutflow": "Nuevo Egreso",
+      "amount": "Cantidad",
+      "paymentMethod": "Metodo de Pago",
+      "detail": "Detalle",
+
+      "dateRegistered": "Fecha de registro",
+      "category": "Categoria",
+      "close": "cerrar",
+      "saveChanges": "Guardar"
+    },
+    "bookletPaymentControl": {
+      "category": "Selecciona La Categoria",
+      "surname": "Apellido",
+      "search": "Buscar",
+      "studentSearch": "Busqueda Del Estudiante",
+      "incomesList": {
+        "incomesList": "Lista de ingresos",
+        "category": "Categoria",
+        "surname": "Apellido",
+        "name": "Nombre",
+        "amount": "Cantidad"
+      },
+      "searchStudent": {
+        "studentsList": "Lista de Estudiantes",
+        "delete": "Borrar"
+      }
+    },
+    "dailyCashflow": {
+      "date": "Fecha",
+      "incomes": "Ingresos",
+      "initialState": "Estado Inicial",
+      "name": "Nombre",
+      "outflows": "Egresos",
+      "category": "Categoria",
+      "amount": "Monto",
+      "paymentMethod": "Metodo de Pago",
+      "detail": "Detalle",
+      "initialCash": "Efectivo Inicial",
+      "totalIncomes": "Ingresos Totales",
+      "totalOutflow": "Egresos Totales",
+      "result": "Resultado",
+
+      "initialDailyCash": {
+        "initialDailyCash": "Efectivo inicial del dia",
+
+        "close": "Cerrar",
+        "save": "Guardar",
+        "cashAmount": "Cantidad de Efectivo",
+        "date": "Fecha"
+      }
+    }
+  }
+}

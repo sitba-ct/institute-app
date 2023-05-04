@@ -1,0 +1,91 @@
+{
+  "students": {
+    "search": "Search",
+    "searchStudents": "Search students",
+    "surname": "surname",
+    "students": "Students",
+    "finalPrice": "final Price :",
+
+    "StudentSearch": {
+      "students": "Students"
+    },
+    "editStudent": {
+      "edit": "Edit",
+      "editStudent": "Edit student",
+      "surname": "Surname",
+      "close": "Close",
+      "saveChanges": "Save Changes"
+    },
+    "addStudent": {
+      "add": "Add student",
+      "newStudent": "New student",
+      "surname": "Surname",
+      "close": "Close",
+      "saveChanges": "Save changes"
+    },
+    "edit-add": {
+      "Student": "Student",
+      "Name": "Name",
+      "Surname": "Surname",
+      "BirthDay": "BirthDay",
+      "Course": "Course",
+      "late-entry": "Late Entry",
+      "Contact": "Contact",
+      "phone": "Phone ",
+      "Email": "Email",
+      "address": "Address",
+      "School-Information": "School Information",
+      "School-Name": "School Name",
+      "School-Turn": "School Turn",
+      "Parent-Information": "Parent Information"
+    },
+    "groupCourseDetails": {
+      "selectPeriodsToPay": "Select periods to pay",
+      "selectCourseToChangeIt": "Select course to changeIt",
+      "persons": "Persons :",
+      "finalPrice": "Final Price :",
+      "paymentModalGroup": {
+        "review": "Review",
+        "clean": "Clean",
+        "newPayment": "New payment",
+        "incomeCategory": "Income category",
+        "amountWith": "AmountWith",
+        "discount": "% discount",
+        "close": "Close",
+        "pay": "Pay",
+        "youHaveIncompleteFiels": "You have incomplete fiels"
+      }
+    },
+    "feeReferenceTable": {
+      "lateEntry": "Late entry",
+      "payedFee": "Payed fee",
+      "lateFee": "Late fee",
+      "currentFee": "Current fee",
+      "incomingFees": "Incoming fees",
+      "selectedFees": "Selected fees"
+    },
+    "studentCourseCard": {
+      "fees": "Fees",
+      "finalPrice": "Final Price :",
+      "courseChangeModal": {
+        "changeStudentCourse": "Change Student Course?",
+        "cancel": "Cancel",
+        "yes": "yes",
+        "choseTheCourse": "ChoseTheCourse",
+        "close": "Close",
+        "change": "Change"
+      },
+      "paymentModal": {
+        "clean": "Clean",
+        "review": "Pay",
+        "newPayment": "NewPayment",
+        "incomeCategory": "IncomeCategory",
+        "paymentMethod": "Payment Method",
+
+        "amount": "Amount",
+        "close": "Close",
+        "pay": "Pay"
+      }
+    }
+  }
+}

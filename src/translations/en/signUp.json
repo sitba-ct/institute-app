@@ -1,0 +1,10 @@
+{
+  "signUp": {
+    "createNewUser": "Create New User",
+    "emailAddress": "Email Address",
+    "userRole": "User Role",
+    "password": "Password",
+    "signUp": "Sign Up",
+    "successfullyCreated": "Successfully Created"
+  }
+}

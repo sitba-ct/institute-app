@@ -1,0 +1,69 @@
+{
+  "cashFlow": {
+    "addIncome": {
+      "addIncome": "Add Income",
+      "newIncome": "New Income",
+      "amount": "Amount",
+      "paymentMethod": "Payment Method",
+      "dateRegistered": "Date Registered",
+      "category": "Category",
+      "chooseStudent": "Choose Student",
+      "close": "close",
+      "detail": "Detail",
+      "saveChanges": "Save Changes"
+    },
+
+    "addOutflow": {
+      "addOutflow": "Add Outflow",
+      "newOutflow": "New Outflow",
+      "paymentMethod": "Payment Method",
+      "detail": "Detail",
+
+      "amount": "Amount",
+      "dateRegistered": "Date Registered",
+      "category": "Category",
+      "close": "close",
+      "saveChanges": "Save Changes"
+    },
+    "bookletPaymentControl": {
+      "category": "Select Category",
+      "surname": "Surname",
+      "search": "Search",
+      "studentSearch": "Student Search",
+      "incomesList": {
+        "incomesList": "Incomes List",
+        "category": "Category",
+        "surname": "Surname",
+        "name": "Name",
+        "amount": "Amount"
+      },
+      "searchStudent": {
+        "studentsList": "Students List",
+        "delete": "Delete"
+      }
+    },
+    "dailyCashflow": {
+      "date": "Date",
+      "initialState": "Initial State",
+      "incomes": "Incomes",
+      "name": "Name",
+      "outflows": "Outflows",
+      "category": "Category",
+      "amount": "Amount",
+      "paymentMethod": "Payment Method",
+      "detail": "Detail",
+      "initialCash": "Initial Cash",
+      "totalIncomes": "total Incomes",
+      "totalOutflow": "Total Outflow",
+      "result": "Result",
+
+      "initialDailyCash": {
+        "initialDailyCash": "Initial Daily Cash",
+        "close": "Close",
+        "save": "Save",
+        "cashAmount": "Cash Amount",
+        "date": "Date"
+      }
+    }
+  }
+}

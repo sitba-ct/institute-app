@@ -1,0 +1,41 @@
+.errorMessage {
+  // font-weight: bold;
+  color: red;
+}
+
+.groupsStudentsTable {
+  max-height: 85vmin;
+  height: auto;
+  width: 30vw !important;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  margin: 2vh;
+  display: inline-block;
+
+  thead {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    display: table;
+    box-sizing: content-box;
+  }
+
+  tbody {
+    padding-top: 12px;
+    max-height: 70vmin;
+    height: auto;
+    width: 100%;
+    border-bottom: 0.5px solid rgb(255, 255, 255);
+    overflow-y: scroll;
+    display: block;
+  }
+
+  tfoot {
+    margin: 10px;
+    height: auto;
+    float: right;
+    Button {
+      background-color: #198754;
+    }
+  }
+}

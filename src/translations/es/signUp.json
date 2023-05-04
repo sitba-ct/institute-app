@@ -1,0 +1,10 @@
+{
+  "signUp": {
+    "createNewUser": "Crear nuevo usuario",
+    "emailAddress": "Direccion de correo",
+    "userRole": "Rol del usuario",
+    "password": "Contraseña",
+    "signUp": "Registrar",
+    "successfullyCreated": "Creado con exito"
+  }
+}

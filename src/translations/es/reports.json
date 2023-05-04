@@ -1,0 +1,45 @@
+{
+  "reports": {
+    "TabNavigation": {
+      "monthlyReports": "Reportes Mensuales",
+      "dailyReports": "Reportes Diarios"
+    },
+    "incomeCategory": {
+      "incomeCategory": "Ingresos",
+      "days": "dias ",
+      "category": "Categoria",
+      "jan": "Ene",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Ago",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dic",
+      "total": "Total"
+    },
+    "outflowCategory": {
+      "outflowCategory": "Egresos",
+      "days": "dias ",
+
+      "category": "Categoria",
+      "jan": "Ene",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Ago",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dic",
+      "total": "Total"
+    }
+  }
+}

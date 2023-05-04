@@ -1,0 +1,57 @@
+{
+  "groups": {
+    "groups": "Groups",
+    "name": "Name",
+    "edit": {
+      "edit": "Edit",
+      "modalEdit": "Modal Edit",
+      "change": "You are going to change name ",
+      "change1": " to",
+      "no": "No",
+      "yes": "Yes"
+    },
+    "delete": {
+      "delete": "Do you want to delete group: peralta ?",
+      "error": "remove students from group",
+      "no": "No",
+      "yes": "Yes"
+    },
+    "addGroup": {
+      "addGroup": "Add Group",
+      "newGroup": "New Group",
+      "name": "Name",
+      "close": "Close",
+      "saveChanges": "Save Changes"
+    },
+    "groupStudents": {
+      "group": "group ",
+      "names": "names",
+      "removeGroupStudent": {
+        "advise": "Do you want to remove",
+        "advise2": " from group",
+        "no": "No",
+        "yes": "Si"
+      },
+      "addStudent": {
+        "addStudent": "Add Student",
+        "title": "New student to group",
+        "students": "Students",
+        "close": "Close",
+        "loading": "Loading...",
+        "saveChanges": "Save"
+      }
+    }
+  },
+  "discount": {
+    "discount": "Discount",
+    "integrants": "Integrants",
+    "rate": "Rate",
+    "addDiscount": {
+      "newDiscount": "New Discount",
+      "memberAmount": "Integrants Amount",
+      "discoun": "% Discount",
+      "close": "Close",
+      "saveChanges": "Save Changes"
+    }
+  }
+}

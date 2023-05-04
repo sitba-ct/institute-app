@@ -1,0 +1,34 @@
+.menu {
+  position: relative;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    place-content: flex-start;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #555555;
+    transition: color 0.3s ease-in-out;
+
+    &.active {
+      color: #fff;
+      border-radius: 10px;
+      background-color: #3784d2d4;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    &__icon {
+      margin-right: 1rem;
+
+      i {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+}

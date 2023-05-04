@@ -1,0 +1,52 @@
+.cursor {
+  cursor: pointer;
+}
+.reference {
+  width: 20px;
+  height: 10px;
+  padding: 3px;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.buttonsFee {
+  width: 55px;
+  height: 34px;
+  text-align: center;
+}
+.courseText {
+  font-size: 9px;
+}
+
+.containerCourse {
+  width: 100px;
+  height: 34px;
+  text-align: center;
+
+  color: #000000;
+  margin-top: 27px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px rgb(0, 0, 0);
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid black;
+  // border-radius: 5px;
+  padding: 8px;
+  background-color: rgb(146, 194, 241);
+  opacity: 1;
+}
+.courseButton:hover {
+  color: #000000;
+  font-size: 13px;
+  text-shadow: 0 0 2px rgb(0, 0, 0);
+  background-color: rgb(61, 149, 236);
+
+  cursor: pointer;
+}
+.cuotasText {
+  padding-top: 35px;
+}

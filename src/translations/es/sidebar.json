@@ -1,0 +1,11 @@
+{
+  "sidebar": {
+    "Students": "Estudiantes",
+    "Courses": "Cursos",
+    "Groups": "Grupos",
+    "Cashflow": "Flujo de fondos",
+    "Reports": "Reportes",
+    "SignUp": "Registrar usuarios",
+    "LogOut": "Salir"
+  }
+}

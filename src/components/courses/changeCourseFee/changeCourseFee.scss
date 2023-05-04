@@ -1,0 +1,69 @@
+.changeCourseFeeTable {
+  max-height: 85vmin;
+  height: auto;
+  max-width: 65vw !important;
+  width: auto;
+  border: 1px solid black !important;
+  border-radius: 5px;
+  margin: 2vh;
+  border-collapse: separate;
+  margin-top: 55px;
+
+  thead {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    display: table;
+    box-sizing: content-box;
+
+    tr {
+      td {
+        width: 100%;
+        display: block;
+        border: none;
+      }
+      th {
+        width: 9%;
+        text-align: start;
+      }
+      #start {
+        width: 15%;
+        text-align: start;
+      }
+      #end {
+        width: 22%;
+        text-align: start;
+      }
+    }
+  }
+
+  tbody {
+    max-height: 70vmin;
+    height: auto;
+    width: 100%;
+    border-bottom: 0.5px solid rgb(228, 222, 222);
+    overflow-y: scroll;
+    display: block;
+    td {
+      width: 9%;
+    }
+  }
+
+  tfoot {
+    margin: 10px;
+    height: auto;
+    float: right;
+    Button {
+      background-color: #198754;
+    }
+  }
+
+  #changeCourseFeeTable-start {
+    width: 15%;
+    text-align: start;
+  }
+  #changeCourseFeeTable-end {
+    width: 13%;
+    text-align: start;
+  }
+}

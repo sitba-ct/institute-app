@@ -1,0 +1,45 @@
+.DailyOutflowTable {
+  max-height: 40vmin;
+  height: auto;
+  width: auto;
+  margin: 10px 0px 0px 0px;
+  text-align: center;
+  overflow: auto;
+}
+
+.title {
+  background-color: #3784d2d4;
+  margin: 2px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: block;
+}
+.headDailyOutflow {
+  position: sticky;
+  top: 30px;
+}
+
+.categoriesRow {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.categoriesRow:hover {
+  overflow: visible;
+  white-space: normal;
+}
+
+.daysColumn {
+  position: sticky;
+  left: 0px;
+}
+.outflowResult {
+  background-color: rgba(255, 0, 0, 0.591) !important;
+}

@@ -1,0 +1,49 @@
+{
+  "courses": {
+    "changeCourseFees": "Cambiar cuota del curso",
+    "changeCourseFee": {
+      "coursesFee": "Cuotas del curso",
+      "courses": "Cursos",
+      "editFeeCourseModal": {
+        "edit": "Editar",
+        "selectFeeIncrease": "Seleccionar % de aumento",
+        "course": "Curso",
+        "close": "Cerrar",
+        "saveChanges": "Guardar"
+      }
+    },
+    "listCourse": "Lista de  cursos",
+    "listCourses": {
+      "listCourses": "Lista de cursos",
+      "name": "Nombre",
+      "initialFee": "Cuota incial",
+      "addCourseAndEditCourse": {
+        "edit": "Editar",
+        "editCourse": "Editar Courso",
+        "add": "Agregar Curso",
+        "new": "Nuevo Curso",
+        "name": "Nombre",
+        "startDate": "Fecha inicial",
+        "initialFee": "Cuota incial",
+        "duration": "Duracion",
+        "close": "Cerrar",
+        "saveChanges": "Guardar"
+      }
+    },
+    "courseStudents": {
+      "group": "Grupo ",
+      "names": "Nombre",
+      "studentsName": "Nombre de los Estudiantes",
+      "bookletPayment": "Pago de Booklets"
+    },
+    "errors": {
+      "add": {
+        "name": {
+          "necessary": "Necesario",
+          "onlyLetersAndSpaces": "Sólo letras y espacios",
+          "alreadyRegistered": " ya esta registrado"
+        }
+      }
+    }
+  }
+}

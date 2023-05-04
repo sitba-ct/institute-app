@@ -1,0 +1,58 @@
+{
+  "groups": {
+    "groups": "Grupos",
+    "name": "Nombre",
+    "edit": {
+      "edit": "Editar",
+      "modalEdit": "Editar",
+      "change": "Vas a cambiar el nombre",
+      "change1": " por ",
+      "no": "No",
+      "yes": "Si"
+    },
+    "delete": {
+      "delete": "Quieres eliminar el grupo",
+      "error": "Eliminar estudiantes del grupo",
+      "no": "No",
+      "yes": "Si"
+    },
+    "addGroup": {
+      "addGroup": "Agregar grupo",
+      "newGroup": "Grupo nuevo",
+      "name": "Nombre",
+      "close": "Cerrar",
+      "saveChanges": "Guardar"
+    },
+    "groupStudents": {
+      "group": "Grupo ",
+      "names": "Nombre",
+      "removeGroupStudent": {
+        "advise": "quieres remover a ",
+        "advise2": " del grupo",
+        "no": "No",
+        "yes": "Si"
+      },
+
+      "addStudent": {
+        "addStudent": "Agregar Estudiante",
+        "title": "Nuevo estudiante al grupo",
+        "students": "Estudiantes",
+        "close": "Cerrar",
+        "saveChanges": "Guardar",
+        "loading": "Cargando..."
+      }
+    }
+  },
+  "discount": {
+    "discount": "Descuento",
+    "integrants": "Integrantes",
+    "rate": "Tasa",
+    "addDiscount": {
+      "newDiscount": "Agregar descuento",
+      "memberAmount": "Cantidad de integrantes",
+      "discoun": "% de descuento",
+      "close": "Cerrar",
+      "saveChanges": "Guardar"
+    }
+  }
+}
