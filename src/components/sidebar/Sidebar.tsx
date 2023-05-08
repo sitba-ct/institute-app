@@ -100,6 +100,7 @@ const Sidebar = (props: sidebarProps) => {
           </Link>
         ))}
       </div>
+      hola {process.env.REACT_APP_PUBLIC},
       <LogOut />
     </div>
   );
