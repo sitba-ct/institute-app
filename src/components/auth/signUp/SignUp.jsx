@@ -34,9 +34,6 @@ const SignUp = () => {
       const { data, error } = await supabase.auth.signUp({
         email: email,
         password: process.env.REACT_APP_RESETPASSWORD_PASSWORD,
-        // options: {
-        //   emailRedirectTo: process.env.REACT_APP_RESETPASSWORD_URL,
-        // },
       });
       if (!error) {
         setSuccessfulSend(true);
