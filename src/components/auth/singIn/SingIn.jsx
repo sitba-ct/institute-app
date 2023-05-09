@@ -12,6 +12,12 @@ const SignIn = () => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    console.log(user);
+
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
@@ -22,6 +28,10 @@ const SignIn = () => {
     } catch (error) {
       alert(error.error_description || error.message);
     }
+  };
+
+  const createNewUser = async () => {
+    navigate("SignUp");
   };
 
   return (
@@ -54,6 +64,9 @@ const SignIn = () => {
         </div>
         <button className="btn btn-primary " onClick={(e) => handleSignIn(e)}>
           {signInTranslation("signIn.logIn")}
+        </button>
+        <button className="btn btn-success " onClick={() => createNewUser()}>
+          {signInTranslation("signIn.newUser")}
         </button>
       </form>
     </div>

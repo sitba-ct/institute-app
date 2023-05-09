@@ -65,16 +65,9 @@ function App() {
               }
             ></Route>
 
-            <Route
-              path="/SignUp"
-              element={
-                <RoleBasedRoute role="admin">
-                  <SignUp />
-                </RoleBasedRoute>
-              }
-            ></Route>
             <Route path="/error/:message" element={<ErrorBoudary />}></Route>
           </Route>
+          <Route path="/login/SignUp" element={<SignUp />}></Route>
         </Routes>
       </Provider>
     </BrowserRouter>

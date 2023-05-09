@@ -3,6 +3,7 @@
     "password": "Contraseña",
     "logIn": "ingreso",
     "neverShare": "Nunca comparta su email o contraseña con nadie.",
-    "emailAddress": "Email"
+    "emailAddress": "Email",
+    "newUser": "Nuevo usuario"
   }
 }
