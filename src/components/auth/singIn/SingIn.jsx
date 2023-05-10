@@ -25,9 +25,9 @@ const SignIn = () => {
     try {
       const { data, error } = await supabase.auth.signInWithOtp({
         email: email,
-        options: {
-          emailRedirectTo: "http://localhost:3000/",
-        },
+        // options: {
+        //   emailRedirectTo: "http://localhost:3000/",
+        // },
       });
       if (error) throw error;
       else navigate("/");
