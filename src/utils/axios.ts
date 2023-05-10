@@ -11,6 +11,7 @@ export const axiosInit = () => {
   // configure interceptors: pick auth header from session storage - add it to all requests
   axios.interceptors.request.use(function (config) {
     let authorizationHeader = getAuthorizationHeader();
+
     if (config.headers != undefined) {
       config.headers.Authorization = authorizationHeader;
     }

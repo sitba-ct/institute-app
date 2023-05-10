@@ -64,10 +64,8 @@ function App() {
                 </RoleBasedRoute>
               }
             ></Route>
-
             <Route path="/error/:message" element={<ErrorBoudary />}></Route>
           </Route>
-          <Route path="/login/SignUp" element={<SignUp />}></Route>
         </Routes>
       </Provider>
     </BrowserRouter>

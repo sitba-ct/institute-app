@@ -1,9 +1,5 @@
 .containerSingIn {
-  background-image: url("");
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: 85vh;
+  background-image: url("logo.jpg");
 }
 
 .form {
@@ -13,4 +9,10 @@
 
 .small-text {
   color: rgb(0, 0, 0);
+}
+
+.container {
+  height: 100vh;
+  width: 100vh;
+  max-width: 100%;
 }

@@ -1,8 +1,8 @@
-import { configureServices } from '../services/dependencyInjection'
+import { configureServices } from "../services/dependencyInjection";
 
 const configureDependencyInjectionContainer = () => {
-    configureServices();
-    // add other categories here (like configure tests ? configure components ?)
-}
+  configureServices();
+  // add other categories here (like configure tests ? configure components ?)
+};
 
-export { configureDependencyInjectionContainer }
+export { configureDependencyInjectionContainer };

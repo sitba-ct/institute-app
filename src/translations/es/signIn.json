@@ -4,6 +4,7 @@
     "logIn": "ingreso",
     "neverShare": "Nunca comparta su email o contraseña con nadie.",
     "emailAddress": "Email",
-    "newUser": "Nuevo usuario"
+    "newUser": "Nuevo usuario",
+    "userRole": "User Role"
   }
 }
