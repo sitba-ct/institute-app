@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./components/auth/singIn/SingIn";
 import StudentCourseDetails from "./components/students/StudentCourseDetails/StudentCourseDetails";
 import GroupCourseDetails from "./components/students/GroupCourseDetails/GroupCourseDetails";
-import SignUp from "./components/auth/signUp/SignUp";
 import GroupStudents from "./components/groups/groupStudents/GroupStudents";
 import CourseStudents from "./components/courses/courseStudents/CourseStudents";
 import { Provider } from "./context/Provider";
