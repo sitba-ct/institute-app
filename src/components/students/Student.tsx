@@ -6,6 +6,7 @@ import StudentSearch from "./StudentSearch/StudentSearch";
 import "./student.scss";
 import { useTranslation } from "react-i18next";
 import { container } from "tsyringe";
+import { supabase } from "../../utils/supabaseClient";
 
 const Student = () => {
   const [studentsTranslation] = useTranslation("students");
@@ -28,6 +29,7 @@ const Student = () => {
   const edit = async (students: IStudent[]) => {
     setStudents(students);
   };
+
   return (
     <div className="studentContainer">
       <h4>{studentsTranslation("students.searchStudents")}</h4>
