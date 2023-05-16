@@ -4,7 +4,6 @@
   top: 0;
   left: 0;
 
-  /* Preserve aspet ratio */
   width: 100%;
   height: 100%;
   text-align: center;
@@ -15,15 +14,23 @@
 }
 
 .form {
-  margin: 100px;
-  height: 150px;
+  margin-top: 7%;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: auto;
+  width: 300px;
+}
+.textform {
+  margin-top: 50px;
+  height: auto;
+  width: 600px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
 .formRole {
-  margin: 100px;
-  height: 230px;
+  margin-top: 7%;
   background-color: rgba(255, 255, 255, 0.3);
+  height: auto;
+  width: 300px;
 }
 
 .small-text {
@@ -31,8 +38,8 @@
 }
 
 .switch {
-  left: 5px;
-  top: 5px;
+  right: 30px;
+  top: 30px;
   margin: 0 5px;
 }
 
@@ -136,4 +143,8 @@ input.check-toggle-round-flat:checked + label {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
+}
+
+.successfulMaildeliveryMessage {
+  color: green;
 }

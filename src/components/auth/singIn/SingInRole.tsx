@@ -54,55 +54,66 @@ const SignInRole = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center containerSingIn ">
-      <form className=" formRole border border-dark rounded   bg-gradient  p-2 text-dark ">
-        <div className="mb-3 ">
-          <label className="fs-5 fw-bold">
-            {signInTranslation("signIn.emailAddress")}
-          </label>
+    <div className="d-flex flex-column  containerSingIn ">
+      <div className="d-flex flex-row-reverse">
+        <div className="switch">
           <input
-            type="email"
-            className="form-control"
-            disabled={true}
-            value={email}
-          ></input>
+            id="language-toggle"
+            className="check-toggle check-toggle-round-flat"
+            type="checkbox"
+            onChange={(e) =>
+              e.target.checked === true
+                ? i18n.changeLanguage("en")
+                : i18n.changeLanguage("es")
+            }
+          />
+          <label htmlFor="language-toggle"></label>
+          <span className="on">ESP</span>
+          <span className="off">ENG</span>
         </div>
-        <div className="mb-3">
-          <h6 className="fs-5 fw-bold">
-            {signInTranslation("signIn.userRole")}
-          </h6>
-          <select
-            className="form-select"
-            value={role || ""}
-            onChange={(e) => {
-              setRole(Number(e.target.value));
-            }}
-          >
-            {roles.map((role) => (
-              <option key={role.id} value={role.id || ""}>
-                {role.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button className="btn btn-primary " onClick={() => setUserRoles()}>
-          {signInTranslation("signIn.logIn")}
-        </button>
-      </form>
-      <div className="switch">
-        <input
-          id="language-toggle"
-          className="check-toggle check-toggle-round-flat"
-          type="checkbox"
-          onChange={(e) =>
-            e.target.checked === true
-              ? i18n.changeLanguage("en")
-              : i18n.changeLanguage("es")
-          }
-        />
-        <label htmlFor="language-toggle"></label>
-        <span className="on">ESP</span>
-        <span className="off">ENG</span>
+      </div>
+      <div className="d-flex justify-content-center">
+        <form className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
+          <div className="mb-3 ">
+            <label className="fs-5 fw-bold">
+              {signInTranslation("signIn.emailAddress")}
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              disabled={true}
+              value={email}
+            ></input>
+          </div>
+          <div className="mb-3">
+            <h6 className="fs-5 fw-bold">
+              {signInTranslation("signIn.userRole")}
+            </h6>
+            <select
+              className="form-select"
+              value={role || ""}
+              onChange={(e) => {
+                setRole(Number(e.target.value));
+              }}
+            >
+              {roles.map((role) => (
+                <option key={role.id} value={role.id || ""}>
+                  {role.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button className="btn btn-primary " onClick={() => setUserRoles()}>
+            {signInTranslation("signIn.logIn")}
+          </button>
+        </form>
+      </div>
+      <div className=" ">
+        <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
+          <p className="p-0 m-0 fs-3 fw-bold"> Sitba </p>
+          <p className="p-0 m-0">{signInTranslation("signIn.viewRoleText1")}</p>
+          <p className="p-0 m-0">{signInTranslation("signIn.viewRoleText2")}</p>
+        </label>
       </div>
     </div>
   );
