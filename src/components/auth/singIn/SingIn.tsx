@@ -15,11 +15,10 @@ const SignIn = () => {
   const [signInTranslation] = useTranslation("signIn");
   const [saveButtonEnabled, setSaveButtonEnabled] = useState(true);
   const [errors, setErrors] = useState(new SignUpError());
-  const [textEmailSended, setTextEmailSended] = useState(false);
 
   const handleSignIn = async () => {
     updateLocalStorageVariableHasRoleDefined();
-    signInMethod(email, setTextEmailSended);
+    signInMethod(email);
   };
 
   useEffect(() => {
@@ -107,12 +106,8 @@ export function updateLocalStorageVariableHasRoleDefined() {
   return hasRoleBeenDefined;
 }
 
-export async function signInMethod(
-  email: string,
-  setTextEmailSended: Dispatch<SetStateAction<boolean>>
-) {
+export async function signInMethod(email: string) {
   try {
-    setTextEmailSended(true);
     const { data, error } = await supabase.auth.signInWithOtp({
       email: email,
       options: {
