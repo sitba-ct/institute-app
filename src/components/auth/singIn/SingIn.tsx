@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction, Dispatch } from "react";
 import { supabase } from "../../../utils/supabaseClient";
 import "./singIn.css";
 import { useTranslation } from "react-i18next";
@@ -15,10 +15,11 @@ const SignIn = () => {
   const [signInTranslation] = useTranslation("signIn");
   const [saveButtonEnabled, setSaveButtonEnabled] = useState(true);
   const [errors, setErrors] = useState(new SignUpError());
+  const [textEmailSended, setTextEmailSended] = useState(false);
 
   const handleSignIn = async () => {
     updateLocalStorageVariableHasRoleDefined();
-    signInMethod(email);
+    signInMethod(email, setTextEmailSended);
   };
 
   useEffect(() => {
@@ -35,46 +36,63 @@ const SignIn = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center containerSingIn ">
-      <form className=" form border border-dark rounded   bg-gradient  p-2 text-dark ">
-        <div className="mb-3 ">
-          <label className="fs-5 fw-bold">
-            {signInTranslation("signIn.emailAddress")}
-          </label>
+    <div className="d-flex flex-column  containerSingIn ">
+      <div className="d-flex flex-row-reverse">
+        <div className="switch">
           <input
-            type="email"
-            className="form-control"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setSaveButtonEnabled(false);
-            }}
-          ></input>{" "}
-          {errors.email && <p className="errorMessage">{errors.email}</p>}
+            id="language-toggle"
+            className="check-toggle check-toggle-round-flat"
+            type="checkbox"
+            onChange={(e) =>
+              e.target.checked === true
+                ? i18n.changeLanguage("en")
+                : i18n.changeLanguage("es")
+            }
+          />
+          <label htmlFor="language-toggle"></label>
+          <span className="on">ESP</span>
+          <span className="off">ENG</span>
         </div>
+      </div>
+      <div className="d-flex justify-content-center">
+        <form className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
+          <div className="mb-3 ">
+            <label className="fs-5 fw-bold">
+              {signInTranslation("signIn.emailAddress")}
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setSaveButtonEnabled(false);
+              }}
+            ></input>
+          </div>
+          <button
+            className="btn btn-primary "
+            onClick={() => refreshErrors()}
+            disabled={saveButtonEnabled}
+          >
+            {signInTranslation("signIn.logIn")}
+          </button>
+          {errors.email && <p className="errorMessage">{errors.email}</p>}
+          {textEmailSended && (
+            <p className="successfulMaildeliveryMessage">
+              {signInTranslation("signIn.textEmailSended")}
+            </p>
+          )}
+        </form>
+      </div>
 
-        <button
-          className="btn btn-primary "
-          onClick={() => refreshErrors()}
-          disabled={saveButtonEnabled}
-        >
-          {signInTranslation("signIn.logIn")}
-        </button>
-      </form>
-      <div className="switch">
-        <input
-          id="language-toggle"
-          className="check-toggle check-toggle-round-flat"
-          type="checkbox"
-          onChange={(e) =>
-            e.target.checked === true
-              ? i18n.changeLanguage("en")
-              : i18n.changeLanguage("es")
-          }
-        />
-        <label htmlFor="language-toggle"></label>
-        <span className="on">ESP</span>
-        <span className="off">ENG</span>
+      <div className=" ">
+        <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
+          <p className="p-0 m-0 fs-3 fw-bold"> Sitba </p>
+          <p className="p-0 m-0">
+            {signInTranslation("signIn.introductionText")}
+          </p>
+        </label>
       </div>
     </div>
   );
@@ -89,8 +107,12 @@ export function updateLocalStorageVariableHasRoleDefined() {
   return hasRoleBeenDefined;
 }
 
-export async function signInMethod(email: string) {
+export async function signInMethod(
+  email: string,
+  setTextEmailSended: Dispatch<SetStateAction<boolean>>
+) {
   try {
+    setTextEmailSended(true);
     const { data, error } = await supabase.auth.signInWithOtp({
       email: email,
       options: {
