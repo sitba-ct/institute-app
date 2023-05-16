@@ -1,5 +1,5 @@
 import Sidebar from "../sidebar/Sidebar";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./appLayout.css";
 
 import { useTranslation } from "react-i18next";
@@ -54,14 +54,6 @@ const AppLayout = () => {
       isVisible: JSON.parse(
         process.env.REACT_APP_UI_NAVITEM_REPORTS_ISVISIBLE!
       ),
-    },
-    {
-      display: "SignUp",
-      icon: <i className="bx bx-log-in-circle"></i>,
-      to: "/SignUp",
-      section: "SignUp",
-      rolesAllowed: ["admin"],
-      isVisible: JSON.parse(process.env.REACT_APP_UI_NAVITEM_SIGNUP_ISVISIBLE!),
     },
   ];
 

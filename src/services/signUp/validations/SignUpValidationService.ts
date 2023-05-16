@@ -4,7 +4,7 @@ import SignUpError from "./SignUpError";
 import { injectable } from "tsyringe";
 @injectable()
 export class SignUpValidationService implements ISignUpValidationService {
-  validateSignUp(email: string, role: string): ISignUpError {
+  validateSignUp(email: string): ISignUpError {
     let errors = new SignUpError();
 
     if (!email.trim()) {
@@ -12,11 +12,7 @@ export class SignUpValidationService implements ISignUpValidationService {
     } else {
       errors.email = "";
     }
-    if (!role.trim()) {
-      errors.role = "requerido";
-    } else {
-      errors.role = "";
-    }
+
     return errors;
   }
 }

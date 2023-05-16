@@ -28,6 +28,7 @@ const Student = () => {
   const edit = async (students: IStudent[]) => {
     setStudents(students);
   };
+
   return (
     <div className="studentContainer">
       <h4>{studentsTranslation("students.searchStudents")}</h4>

@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./components/auth/singIn/SingIn";
 import StudentCourseDetails from "./components/students/StudentCourseDetails/StudentCourseDetails";
 import GroupCourseDetails from "./components/students/GroupCourseDetails/GroupCourseDetails";
-import SignUp from "./components/auth/signUp/SignUp";
 import GroupStudents from "./components/groups/groupStudents/GroupStudents";
 import CourseStudents from "./components/courses/courseStudents/CourseStudents";
 import { Provider } from "./context/Provider";
@@ -19,6 +18,7 @@ import ErrorBoudary from "./error/ErrorBoudary";
 import Reports from "./components/reports/Reports";
 import DailyCashflow from "./components/cashflow/dailyCashflow/DailyCashflow";
 import BookletPaymentControl from "./components/cashflow/bookletPaymentControl/BookletPaymentControl";
+import SignInRole from "./components/auth/singIn/SingInRole";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
       <Provider>
         <Routes>
           <Route path="/login" element={<SignIn />} />
+          <Route path="/loginRole" element={<SignInRole />} />
           <Route
             path="/"
             element={
