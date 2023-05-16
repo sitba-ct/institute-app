@@ -4,7 +4,8 @@
   left: 0;
   height: 100vh;
   width: inherit;
-  background-color: rgb(146, 194, 241);
+  background-color: #0655a4b5;
+
   overflow-y: scroll;
   -ms-overflow-style: none;
 
@@ -53,7 +54,7 @@
       left: 50%;
       width: calc(100% - 40px);
       border-radius: 10px;
-      background-color: #3784d2d4;
+      background-color: rgb(109, 109, 114);
       z-index: -1;
       transform: translateX(-50%);
       transition: 0.3s ease-in-out;

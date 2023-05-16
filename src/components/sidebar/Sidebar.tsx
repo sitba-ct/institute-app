@@ -74,7 +74,7 @@ const Sidebar = (props: sidebarProps) => {
 
   return (
     <div className="sidebar ">
-      <div className="sidebar__logo ">App</div>
+      <div className="sidebar__logo ">Sitba</div>
       <div ref={sidebarRef} className="sidebar__menu ">
         <div
           ref={indicatorRef}

@@ -89,7 +89,7 @@ input.check-toggle-round-flat + label {
   padding: 2px;
   width: 99px;
   height: 35px;
-  background-color: #33ade1;
+  background-color: #1467bab0;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
@@ -108,7 +108,7 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: rgb(146, 194, 241);
+  background-color: #0655a4b5;
   -webkit-moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;
