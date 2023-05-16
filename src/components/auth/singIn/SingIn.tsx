@@ -77,11 +77,6 @@ const SignIn = () => {
             {signInTranslation("signIn.logIn")}
           </button>
           {errors.email && <p className="errorMessage">{errors.email}</p>}
-          {textEmailSended && (
-            <p className="successfulMaildeliveryMessage">
-              {signInTranslation("signIn.textEmailSended")}
-            </p>
-          )}
         </form>
       </div>
 
