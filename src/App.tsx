@@ -1,4 +1,4 @@
-import "./app.scss";
+import "./app.css";
 import "boxicons/css/boxicons.min.css";
 import AppLayout from "./components/layout/AppLayout";
 import Courses from "./components/courses/Courses";
