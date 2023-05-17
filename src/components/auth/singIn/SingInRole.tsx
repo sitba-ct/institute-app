@@ -26,12 +26,6 @@ const SignInRole = () => {
     initRoles();
     initUsers();
     getSession(setUserId, setEmail);
-    var hasRoleBeenDefined = getLocalStorageVariableHasRoleDefined();
-    if (hasRoleBeenDefined === "true") {
-      supabase.auth.refreshSession().then(() => {
-        navigate("/");
-      });
-    }
   }, []);
 
   const initRoles = async () => {
@@ -43,14 +37,15 @@ const SignInRole = () => {
     setUserRole(Users);
   };
 
-  const setUserRoles = async () => {
-    updateLocalStorageVariableHasRoleDefined();
+  const setUserRoles = async (event: any) => {
+    event.preventDefault();
     const user = doesTheUserExist(userRole, userId);
     if (user === undefined) {
       await userRoleService.newUserRole(userId, role);
     } else {
       await userRoleService.updateUserRole(userId, role);
     }
+    navigate("/");
   };
 
   return (
@@ -73,7 +68,7 @@ const SignInRole = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <form className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
+        <div className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
           <div className="mb-3 ">
             <label className="fs-5 fw-bold">
               {signInTranslation("signIn.emailAddress")}
@@ -103,10 +98,13 @@ const SignInRole = () => {
               ))}
             </select>
           </div>
-          <button className="btn btn-primary " onClick={() => setUserRoles()}>
+          <button
+            className="btn btn-primary "
+            onClick={(event) => setUserRoles(event)}
+          >
             {signInTranslation("signIn.logIn")}
           </button>
-        </form>
+        </div>
       </div>
       <div className=" ">
         <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
@@ -119,11 +117,6 @@ const SignInRole = () => {
   );
 };
 export default SignInRole;
-
-export function updateLocalStorageVariableHasRoleDefined() {
-  const hasRoleBeenDefined = localStorage.setItem("hasRoleBeenDefined", "true");
-  return hasRoleBeenDefined;
-}
 
 export function doesTheUserExist(userRole: IUserRole[], userId: string) {
   const user = userRole.find((user) => {
@@ -141,9 +134,4 @@ export function getSession(
       setEmail(session!.user.email);
     }
   });
-}
-
-export function getLocalStorageVariableHasRoleDefined() {
-  var hasRoleBeenDefined = localStorage.getItem("hasRoleBeenDefined");
-  return hasRoleBeenDefined;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { supabase } from "../../../utils/supabaseClient";
 import "./singIn.css";
 import { useTranslation } from "react-i18next";
@@ -7,8 +7,6 @@ import { container } from "tsyringe";
 import { SignUpValidationService } from "../../../services/signUp/validations/SignUpValidationService";
 
 const SignIn = () => {
-  const signUpValidationService = container.resolve(SignUpValidationService);
-
   const [t, i18n] = useTranslation();
 
   const [email, setEmail] = useState("");
@@ -18,27 +16,13 @@ const SignIn = () => {
   const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
     useState(false);
 
-  const handleSignIn = async () => {
-    // setLocalStorageVariable();
-    signInMethod(email, setSuccessfulMaildeliveryMessage);
-  };
-
   useEffect(() => {
+    setSaveButtonEnabled(true);
     if (Object.values(errors).every((x) => x === "")) {
-      setSaveButtonEnabled(true);
-      // updateLocalStorageVariableSHasEmailSended();
-      handleSignIn();
+      signInMethod(email, setSuccessfulMaildeliveryMessage);
     } else {
-      setSaveButtonEnabled(true);
     }
   }, [errors]);
-
-  const refreshErrors = (event: any) => {
-    event.preventDefault(); // Prevent the default form submission
-
-    let signUpErrors = signUpValidationService.validateSignUp(email);
-    setErrors(signUpErrors);
-  };
 
   return (
     <div className="d-flex flex-column  containerSingIn ">
@@ -60,7 +44,7 @@ const SignIn = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <form className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
+        <div className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
           <div className="mb-3 ">
             <label className="fs-5 fw-bold">
               {signInTranslation("signIn.emailAddress")}
@@ -77,7 +61,7 @@ const SignIn = () => {
           </div>
           <button
             className="btn btn-primary "
-            onClick={(e) => refreshErrors(e)}
+            onClick={() => errorHandle(email, setErrors)}
             disabled={saveButtonEnabled}
           >
             {signInTranslation("signIn.logIn")}
@@ -90,7 +74,7 @@ const SignIn = () => {
               {signInTranslation("signIn.textEmailSended")}
             </p>
           )}
-        </form>
+        </div>
       </div>
       <div className=" ">
         <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
@@ -105,13 +89,9 @@ const SignIn = () => {
 };
 export default SignIn;
 
-// export function setLocalStorageVariable() {
-//   localStorage.setItem("hasRoleBeenDefined", "false");
-// }
-
 export async function signInMethod(
   email: string,
-  setSuccessfulMaildeliveryMessage: any
+  setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
 ) {
   try {
     const { data, error } = await supabase.auth.signInWithOtp({
@@ -124,4 +104,13 @@ export async function signInMethod(
   } catch (error: any) {
     alert(error.error_description || error.message);
   }
+}
+
+export function errorHandle(
+  email: string,
+  setErrors: Dispatch<SetStateAction<SignUpError>>
+) {
+  const signUpValidationService = container.resolve(SignUpValidationService);
+  let signUpErrors = signUpValidationService.validateSignUp(email);
+  setErrors(signUpErrors);
 }
