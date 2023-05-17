@@ -1,4 +1,4 @@
-import { useState, useEffect, SetStateAction, Dispatch } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "../../../utils/supabaseClient";
 import "./singIn.css";
 import { useTranslation } from "react-i18next";
@@ -15,21 +15,27 @@ const SignIn = () => {
   const [signInTranslation] = useTranslation("signIn");
   const [saveButtonEnabled, setSaveButtonEnabled] = useState(true);
   const [errors, setErrors] = useState(new SignUpError());
+  const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
+    useState(false);
 
   const handleSignIn = async () => {
-    updateLocalStorageVariableHasRoleDefined();
-    signInMethod(email);
+    // setLocalStorageVariable();
+    signInMethod(email, setSuccessfulMaildeliveryMessage);
   };
 
   useEffect(() => {
     if (Object.values(errors).every((x) => x === "")) {
+      setSaveButtonEnabled(true);
+      // updateLocalStorageVariableSHasEmailSended();
       handleSignIn();
     } else {
       setSaveButtonEnabled(true);
     }
   }, [errors]);
 
-  const refreshErrors = () => {
+  const refreshErrors = (event: any) => {
+    event.preventDefault(); // Prevent the default form submission
+
     let signUpErrors = signUpValidationService.validateSignUp(email);
     setErrors(signUpErrors);
   };
@@ -71,15 +77,21 @@ const SignIn = () => {
           </div>
           <button
             className="btn btn-primary "
-            onClick={() => refreshErrors()}
+            onClick={(e) => refreshErrors(e)}
             disabled={saveButtonEnabled}
           >
             {signInTranslation("signIn.logIn")}
           </button>
-          {errors.email && <p className="errorMessage">{errors.email}</p>}
+          {errors.email && (
+            <p className="errorMessage1 mt-2 fs-6 fw-bold ">{errors.email}</p>
+          )}
+          {successfulMaildeliveryMessage && (
+            <p className="successfulMaildeliveryMessage mt-2 fs-5 fw-bold">
+              {signInTranslation("signIn.textEmailSended")}
+            </p>
+          )}
         </form>
       </div>
-
       <div className=" ">
         <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
           <p className="p-0 m-0 fs-3 fw-bold"> Sitba </p>
@@ -93,15 +105,14 @@ const SignIn = () => {
 };
 export default SignIn;
 
-export function updateLocalStorageVariableHasRoleDefined() {
-  const hasRoleBeenDefined = localStorage.setItem(
-    "hasRoleBeenDefined",
-    "false"
-  );
-  return hasRoleBeenDefined;
-}
+// export function setLocalStorageVariable() {
+//   localStorage.setItem("hasRoleBeenDefined", "false");
+// }
 
-export async function signInMethod(email: string) {
+export async function signInMethod(
+  email: string,
+  setSuccessfulMaildeliveryMessage: any
+) {
   try {
     const { data, error } = await supabase.auth.signInWithOtp({
       email: email,
@@ -109,6 +120,7 @@ export async function signInMethod(email: string) {
         emailRedirectTo: process.env.REACT_APP_EMAILREDIRECTTO,
       },
     });
+    setSuccessfulMaildeliveryMessage(true);
   } catch (error: any) {
     alert(error.error_description || error.message);
   }

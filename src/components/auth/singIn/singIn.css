@@ -148,3 +148,8 @@ input.check-toggle-round-flat:checked + label:after {
 .successfulMaildeliveryMessage {
   color: green;
 }
+
+.errorMessage1 {
+  text-align: center;
+  color: red;
+}
