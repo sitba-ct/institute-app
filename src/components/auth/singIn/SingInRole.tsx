@@ -1,7 +1,7 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 import { supabase } from "../../../utils/supabaseClient";
-import "./singIn.css";
+import "./singIn.scss";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { container } from "tsyringe";

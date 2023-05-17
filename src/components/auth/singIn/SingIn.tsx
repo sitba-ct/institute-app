@@ -1,6 +1,6 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { supabase } from "../../../utils/supabaseClient";
-import "./singIn.css";
+import "./singIn.scss";
 import { useTranslation } from "react-i18next";
 import SignUpError from "../../../services/signUp/validations/SignUpError";
 import { container } from "tsyringe";

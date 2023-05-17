@@ -1,3 +1,5 @@
+@import "../../../index";
+
 .containerSingIn {
   background-image: url("logo.jpg");
   position: fixed;
@@ -15,7 +17,6 @@
 
 .form {
   margin-top: 7%;
-  background-color: rgba(255, 255, 255, 0.3);
   height: auto;
   width: 300px;
 }
@@ -23,12 +24,10 @@
   margin-top: 50px;
   height: auto;
   width: 600px;
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .formRole {
   margin-top: 7%;
-  background-color: rgba(255, 255, 255, 0.3);
   height: auto;
   width: 300px;
 }
@@ -115,7 +114,7 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: rgb(146, 194, 241);
+  background-color: $primaryAppColor;
   -webkit-moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;

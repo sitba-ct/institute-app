@@ -1,3 +1,5 @@
+@import "./../../../../index";
+
 .monthlyincomeTable {
   max-height: 40vmin;
   height: auto;
@@ -8,7 +10,7 @@
 }
 
 .title {
-  background-color: #3784d2d4;
+  background-color: $secondaryAppColor;
   margin: 2px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;

@@ -1,10 +1,12 @@
+@import "./../../index";
+
 .errorMessage {
   text-align: start;
 }
 
 .changeCourseFeeButton {
   border-radius: 10px;
-  background-color: #3784d2d4;
+  background-color: $secondaryAppColor;
   height: 10%;
   width: 20%;
   margin: 10px;
@@ -16,7 +18,7 @@
 }
 .newCourseButton {
   border-radius: 10px;
-  background-color: #3784d2d4;
+  background-color: $secondaryAppColor;
   height: 10%;
   width: 20%;
   margin: 10px;

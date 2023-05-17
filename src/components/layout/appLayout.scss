@@ -1,15 +1,4 @@
-/* .container {
-  height: 100vmin;
-  width: 100vmax;
-  padding: 0, 0, 0, 0;
-  margin: 0, 0, 0, 0;
-}*/
-
-/* .sidebar {
-  flex: 0 0 auto;
-  width: 23%;
-  height: 100%;
-}  */
+@import "../../index";
 
 .outlet {
   flex: 0 0 auto;
@@ -101,7 +90,7 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: rgb(146, 194, 241);
+  background-color: $primaryAppColor;
   -webkit-moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;

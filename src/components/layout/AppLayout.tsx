@@ -1,6 +1,6 @@
 import Sidebar from "../sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
-import "./appLayout.css";
+import "./appLayout.scss";
 
 import { useTranslation } from "react-i18next";
 import INavItem from "../../services/sideBar/INavItems";
