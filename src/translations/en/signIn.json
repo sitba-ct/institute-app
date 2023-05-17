@@ -6,7 +6,7 @@
     "emailAddress": "Email Address",
     "newUser": "New User",
     "userRole": "User Role",
-    "textEmailSended": "successful mail delivery",
+    "textEmailSended": "Email succesfully sent",
     "introductionText": "This application is a copy of a delivered product, it is adapted for public use in order to show our work. Feel free to explore it.",
     "viewRoleText1": " * Roles: each role has different characteristics. ",
     "viewRoleText2": " * Languages: the entire application is adapted to English and Spanish"

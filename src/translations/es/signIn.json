@@ -6,7 +6,7 @@
     "emailAddress": "Email",
     "newUser": "Nuevo usuario",
     "userRole": " Rol Del Usuario",
-    "textEmailSended": "Mail enviado correctamente",
+    "textEmailSended": "Mail enviado exitosamente",
     "introductionText": "Esta aplicacion es una copia de un producto entregado, esta adaptado para el uso publico y asi poder mostrar nuestro trabajo. Sean libres de explorarla.",
     "viewRoleText1": " * Roles: cada rol posee diferentes habilitaciones. ",
     "viewRoleText2": " * Lenguajes: toda la aplicacion esta adaptada al ingles y español"
