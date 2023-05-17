@@ -23,10 +23,13 @@ const SignInRole = () => {
   const [userRole, setUserRole] = useState<IUserRole[]>([]);
 
   useEffect(() => {
-    initRoles();
-    initUsers();
     getSession(setUserId, setEmail);
   }, []);
+
+  useEffect(() => {
+    initRoles();
+    initUsers();
+  }, [userId && email]);
 
   const initRoles = async () => {
     const roles = await userRoleService.initRoles();
