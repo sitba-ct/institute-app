@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import { I18nextProvider } from "react-i18next";
 import { configureLanguages } from "./utils/languages";
 import { configureDependencyInjectionContainer } from "./utils/dependencyInjection";
+import "./index.css";
 
 axiosInit();
 configureDependencyInjectionContainer();

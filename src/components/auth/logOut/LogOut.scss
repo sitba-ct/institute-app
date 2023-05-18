@@ -1,5 +1,3 @@
-@import "./../../../index";
-
 .menu {
   position: relative;
 
@@ -16,7 +14,7 @@
     &.active {
       color: #fff;
       border-radius: 10px;
-      background-color: $secondaryAppColor;
+      background-color: #3784d2d4;
       margin-left: 1.5rem;
       margin-right: 1.5rem;
     }

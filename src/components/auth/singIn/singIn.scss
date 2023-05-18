@@ -1,5 +1,3 @@
-@import "../../../index";
-
 .containerSingIn {
   background-image: url("logo.jpg");
   position: fixed;
@@ -114,7 +112,7 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: $primaryAppColor;
+  background-color: rgb(146, 194, 241);
   -webkit-moz-border-radius: 60px;
   -ms-border-radius: 60px;
   -o-border-radius: 60px;
