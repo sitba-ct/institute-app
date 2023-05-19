@@ -78,7 +78,7 @@ const SignIn = () => {
         </div>
       </div>
       <div className=" ">
-        <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
+        <label className=" textform   p-2 text-dark ">
           <p className="p-0 m-0 fs-3 fw-bold"> SITBA</p>
           <p className="p-0 m-0">
             {signInTranslation("signIn.introductionText0")}
@@ -88,12 +88,12 @@ const SignIn = () => {
               {signInTranslation("signIn.introductionText1")}
             </p>
             <button
-              className="btn btn-link p-0 ms-1"
+              className="textToClickOn p-0 ms-1"
               onClick={() => {
                 setHidenText(hidenText ? false : true);
               }}
             >
-              features.
+              {signInTranslation("signIn.introductionText10")}
             </button>
           </div>
           <ul
@@ -103,7 +103,6 @@ const SignIn = () => {
           >
             <li>{signInTranslation("signIn.introductionText2")}</li>
             <li>{signInTranslation("signIn.introductionText3")}</li>
-            <li>{signInTranslation("signIn.introductionText4")}</li>
             <li>{signInTranslation("signIn.introductionText5")}</li>
             <li>{signInTranslation("signIn.introductionText6")}</li>
             <li>{signInTranslation("signIn.introductionText7")}</li>

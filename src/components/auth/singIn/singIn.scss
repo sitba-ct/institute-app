@@ -152,10 +152,21 @@ input.check-toggle-round-flat:checked + label:after {
 }
 
 .bulletPointsText {
-  margin-left: 185px;
+  margin-left: 165px;
 }
 
 .hidenText {
   visibility: hidden;
   display: none;
+}
+
+.textToClickOn {
+  font-size: 16px; /* default font size */
+  transition: font-size 0.3s; /* smooth transition */
+  font-weight: bold; /* bold font weight on hover */
+  background-color: transparent;
+}
+
+.textToClickOn:hover {
+  font-size: 20px; /* increased font size on hover */
 }
