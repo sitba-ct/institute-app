@@ -7,8 +7,16 @@
     "newUser": "Nuevo usuario",
     "userRole": " Rol Del Usuario",
     "textEmailSended": "Mail enviado exitosamente",
-    "introductionText": "Esta aplicacion es una copia de un producto entregado, esta adaptado para el uso publico y asi poder mostrar nuestro trabajo. Sean libres de explorarla.",
+    "introductionText0": "Demostración de aplicación para un instituto de lengua",
+    "introductionText1": "Siéntanse libres de ",
+    "introductionText2": "Manejo de estudiantes y cursos.",
+    "introductionText3": "Pago de cuotas.",
+    "introductionText4": "Registro de estudiantes.",
+    "introductionText5": "Seguimiento de pagos.",
+    "introductionText6": "Reportes mensuales y anuales.",
+    "introductionText7": "Alternativas de lenguajes.",
+    "introductionText8": "Diferenciación por roles.",
     "viewRoleText1": " * Roles: cada rol posee diferentes habilitaciones. ",
-    "viewRoleText2": " * Lenguajes: toda la aplicacion esta adaptada al ingles y español"
+    "viewRoleText2": ""
   }
 }

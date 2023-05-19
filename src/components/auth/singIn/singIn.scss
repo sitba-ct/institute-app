@@ -150,3 +150,12 @@ input.check-toggle-round-flat:checked + label:after {
   text-align: center;
   color: red;
 }
+
+.bulletPointsText {
+  margin-left: 185px;
+}
+
+.hidenText {
+  visibility: hidden;
+  display: none;
+}

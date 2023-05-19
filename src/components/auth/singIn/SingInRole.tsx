@@ -40,14 +40,17 @@ const SignInRole = () => {
     setUserRole(Users);
   };
 
-  const setUserRoles = async (event: any) => {
-    event.preventDefault();
-    const user = doesTheUserExist(userRole, userId);
-    if (user === undefined) {
+  const setUserRoles = async () => {
+    const userExist = doesTheUserExist(userRole, userId);
+    if (userExist === undefined) {
       await userRoleService.newUserRole(userId, role);
     } else {
       await userRoleService.updateUserRole(userId, role);
     }
+
+    const { data, error } = await supabase.auth.refreshSession();
+    const { session, user } = data;
+
     navigate("/");
   };
 
@@ -61,13 +64,13 @@ const SignInRole = () => {
             type="checkbox"
             onChange={(e) =>
               e.target.checked === true
-                ? i18n.changeLanguage("en")
-                : i18n.changeLanguage("es")
+                ? i18n.changeLanguage("es")
+                : i18n.changeLanguage("en")
             }
           />
           <label htmlFor="language-toggle"></label>
-          <span className="on">ESP</span>
-          <span className="off">ENG</span>
+          <span className="on">ENG</span>
+          <span className="off">ESP</span>
         </div>
       </div>
       <div className="d-flex justify-content-center">
@@ -101,10 +104,7 @@ const SignInRole = () => {
               ))}
             </select>
           </div>
-          <button
-            className="btn btn-primary "
-            onClick={(event) => setUserRoles(event)}
-          >
+          <button className="btn btn-primary " onClick={() => setUserRoles()}>
             {signInTranslation("signIn.logIn")}
           </button>
         </div>

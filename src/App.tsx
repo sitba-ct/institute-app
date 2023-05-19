@@ -19,6 +19,7 @@ import Reports from "./components/reports/Reports";
 import DailyCashflow from "./components/cashflow/dailyCashflow/DailyCashflow";
 import BookletPaymentControl from "./components/cashflow/bookletPaymentControl/BookletPaymentControl";
 import SignInRole from "./components/auth/singIn/SingInRole";
+import LogOut from "./components/auth/logOut/LogOut";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<SignIn />} />
           <Route path="/loginRole" element={<SignInRole />} />
+          <Route path="/logOut" element={<LogOut />} />
+
           <Route
             path="/"
             element={

@@ -13,6 +13,7 @@ const SignIn = () => {
   const [signInTranslation] = useTranslation("signIn");
   const [saveButtonEnabled, setSaveButtonEnabled] = useState(true);
   const [errors, setErrors] = useState(new SignUpError());
+  const [hidenText, setHidenText] = useState(true);
   const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
     useState(false);
 
@@ -34,13 +35,13 @@ const SignIn = () => {
             type="checkbox"
             onChange={(e) =>
               e.target.checked === true
-                ? i18n.changeLanguage("en")
-                : i18n.changeLanguage("es")
+                ? i18n.changeLanguage("es")
+                : i18n.changeLanguage("en")
             }
           />
           <label htmlFor="language-toggle"></label>
-          <span className="on">ESP</span>
-          <span className="off">ENG</span>
+          <span className="on">ENG</span>
+          <span className="off">ESP</span>
         </div>
       </div>
       <div className="d-flex justify-content-center">
@@ -78,10 +79,36 @@ const SignIn = () => {
       </div>
       <div className=" ">
         <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
-          <p className="p-0 m-0 fs-3 fw-bold"> Sitba </p>
+          <p className="p-0 m-0 fs-3 fw-bold"> SITBA</p>
           <p className="p-0 m-0">
-            {signInTranslation("signIn.introductionText")}
+            {signInTranslation("signIn.introductionText0")}
           </p>
+          <div className="linkFeatures d-flex justify-content-center">
+            <p className="p-0 m-0">
+              {signInTranslation("signIn.introductionText1")}
+            </p>
+            <button
+              className="btn btn-link p-0 ms-1"
+              onClick={() => {
+                setHidenText(hidenText ? false : true);
+              }}
+            >
+              features.
+            </button>
+          </div>
+          <ul
+            className={
+              hidenText ? "hidenText" : "text-start bulletPointsText  "
+            }
+          >
+            <li>{signInTranslation("signIn.introductionText2")}</li>
+            <li>{signInTranslation("signIn.introductionText3")}</li>
+            <li>{signInTranslation("signIn.introductionText4")}</li>
+            <li>{signInTranslation("signIn.introductionText5")}</li>
+            <li>{signInTranslation("signIn.introductionText6")}</li>
+            <li>{signInTranslation("signIn.introductionText7")}</li>
+            <li>{signInTranslation("signIn.introductionText8")}</li>
+          </ul>
         </label>
       </div>
     </div>

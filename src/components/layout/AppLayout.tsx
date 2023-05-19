@@ -55,6 +55,14 @@ const AppLayout = () => {
         process.env.REACT_APP_UI_NAVITEM_REPORTS_ISVISIBLE!
       ),
     },
+    {
+      display: "LogOut",
+      icon: <i className="bx bx-log-out"></i>,
+      to: "/logOut",
+      section: "logOut",
+      rolesAllowed: ["secretary", "admin"],
+      isVisible: JSON.parse(process.env.REACT_APP_UI_NAVITEM_LOGOUT_ISVISIBLE!),
+    },
   ];
 
   const [t, i18n] = useTranslation();
@@ -80,13 +88,13 @@ const AppLayout = () => {
               type="checkbox"
               onChange={(e) =>
                 e.target.checked === true
-                  ? i18n.changeLanguage("en")
-                  : i18n.changeLanguage("es")
+                  ? i18n.changeLanguage("es")
+                  : i18n.changeLanguage("en")
               }
             />
             <label htmlFor="language-toggle"></label>
-            <span className="on">ESP</span>
-            <span className="off">ENG</span>
+            <span className="on">ENG</span>
+            <span className="off">ESP</span>
           </div>
         </div>
       </div>

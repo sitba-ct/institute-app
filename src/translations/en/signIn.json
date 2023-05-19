@@ -7,7 +7,15 @@
     "newUser": "New User",
     "userRole": "User Role",
     "textEmailSended": "Email succesfully sent",
-    "introductionText": "This application is a copy of a delivered product, it is adapted for public use in order to show our work. Feel free to explore it.",
+    "introductionText0": "Language Institute demo app.",
+    "introductionText1": "Feel free to explore all the ",
+    "introductionText2": "Students AND Courses management.",
+    "introductionText3": "Fee payment.",
+    "introductionText4": "registration Student/group.",
+    "introductionText5": "financial State overview.",
+    "introductionText6": "Monthly/anual Reports.",
+    "introductionText7": "Múltiple language support.",
+    "introductionText8": "Role based behavior.",
     "viewRoleText1": " * Roles: each role has different characteristics. ",
     "viewRoleText2": " * Languages: the entire application is adapted to English and Spanish"
   }
