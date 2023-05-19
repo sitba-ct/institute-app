@@ -109,13 +109,6 @@ const SignInRole = () => {
           </button>
         </div>
       </div>
-      <div className=" ">
-        <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
-          <p className="p-0 m-0 fs-3 fw-bold"> Sitba </p>
-          <p className="p-0 m-0">{signInTranslation("signIn.viewRoleText1")}</p>
-          <p className="p-0 m-0">{signInTranslation("signIn.viewRoleText2")}</p>
-        </label>
-      </div>
     </div>
   );
 };
