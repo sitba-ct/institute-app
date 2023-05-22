@@ -1,4 +1,3 @@
-
 import i18next from "i18next";
 
 import courses_es from "../translations/es/courses.json";
@@ -21,35 +20,35 @@ import resetPassword_es from "../translations/es/resetPassword.json";
 import resetPassword_en from "../translations/en/resetPassword.json";
 
 const configureLanguages = () => {
-    i18next.init({
-        interpolation: { escapeValue: false },
-        lng: "es",
-        resources: {
-          es: {
-            students: students_es,
-            sidebar: sidebar_es,
-            courses: courses_es,
-            groups: groups_es,
-            cashFlow: cashFlow_es,
-            reports: reports_es,
-            signIn: signIn_es,
-            signUp: signUp_es,
-            resetPassword: resetPassword_es,
-          },
-          en: {
-            students: students_en,
-            sidebar: sidebar_en,
-            courses: courses_en,
-            groups: groups_en,
-            cashFlow: cashFlow_en,
-            reports: reports_en,
-            signIn: signIn_en,
-            signUp: signUp_en,
-            resetPassword: resetPassword_en,
-          },
-        },
-    });
-    return i18next;
-}
+  i18next.init({
+    interpolation: { escapeValue: false },
+    lng: "en",
+    resources: {
+      es: {
+        students: students_es,
+        sidebar: sidebar_es,
+        courses: courses_es,
+        groups: groups_es,
+        cashFlow: cashFlow_es,
+        reports: reports_es,
+        signIn: signIn_es,
+        signUp: signUp_es,
+        resetPassword: resetPassword_es,
+      },
+      en: {
+        students: students_en,
+        sidebar: sidebar_en,
+        courses: courses_en,
+        groups: groups_en,
+        cashFlow: cashFlow_en,
+        reports: reports_en,
+        signIn: signIn_en,
+        signUp: signUp_en,
+        resetPassword: resetPassword_en,
+      },
+    },
+  });
+  return i18next;
+};
 
-export { configureLanguages }
+export { configureLanguages };

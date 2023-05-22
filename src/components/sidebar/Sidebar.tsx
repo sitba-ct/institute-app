@@ -73,8 +73,8 @@ const Sidebar = (props: sidebarProps) => {
   }, [location]);
 
   return (
-    <div className="sidebar ">
-      <div className="sidebar__logo ">App</div>
+    <div className="sidebar">
+      <div className="sidebar__logo">S I T B A</div>
       <div ref={sidebarRef} className="sidebar__menu ">
         <div
           ref={indicatorRef}
@@ -99,8 +99,8 @@ const Sidebar = (props: sidebarProps) => {
             </div>
           </Link>
         ))}
+        {/* <div className="sitbaLogo ">S I T B A</div> */}
       </div>
-      <LogOut />
     </div>
   );
 };

@@ -1,45 +1,18 @@
-.containerSingIn {
-  background-image: url("logo.jpg");
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
+.outlet {
+  flex: 0 0 auto;
+  width: 72%;
   height: 100%;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
-.form {
-  margin-top: 7%;
-  background-color: rgba(255, 255, 255, 0.3);
-  height: auto;
-  width: 300px;
-}
-.textform {
-  margin-top: 50px;
-  height: auto;
-  width: 600px;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.formRole {
-  margin-top: 7%;
-  background-color: rgba(255, 255, 255, 0.3);
-  height: auto;
-  width: 300px;
-}
-
-.small-text {
-  color: rgb(0, 0, 0);
+.outletDropdown {
+  position: absolute;
+  right: 1%;
+  top: 10px;
 }
 
 .switch {
-  right: 30px;
-  top: 30px;
+  position: relative;
+  display: inline-block;
   margin: 0 5px;
 }
 
@@ -143,8 +116,4 @@ input.check-toggle-round-flat:checked + label {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
-}
-
-.successfulMaildeliveryMessage {
-  color: green;
 }

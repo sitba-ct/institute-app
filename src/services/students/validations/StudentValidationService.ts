@@ -75,8 +75,6 @@ export class StudentValidationService implements IStudentValidationService {
 
     if (!student.email) {
       errors.email = "requerido";
-    } else if (student.email) {
-      errors.email = "";
     } else if (!regexEmail.test(student.email.trim())) {
       errors.email = "Incorrecto ";
     } else {
@@ -85,8 +83,6 @@ export class StudentValidationService implements IStudentValidationService {
 
     if (!student.direction) {
       errors.direction = "requerido";
-    } else if (student.direction) {
-      errors.direction = "";
     } else {
       errors.direction = "";
     }
@@ -165,8 +161,6 @@ export class StudentValidationService implements IStudentValidationService {
 
     if (!student.email) {
       errors.email = "requerido";
-    } else if (student.email) {
-      errors.email = "";
     } else if (!regexEmail.test(student.email.trim())) {
       errors.email = "Incorrecto ";
     } else {

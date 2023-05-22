@@ -1,7 +1,7 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 import { supabase } from "../../../utils/supabaseClient";
-import "./singIn.css";
+import "./singIn.scss";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { container } from "tsyringe";
@@ -23,16 +23,13 @@ const SignInRole = () => {
   const [userRole, setUserRole] = useState<IUserRole[]>([]);
 
   useEffect(() => {
+    getSession(setUserId, setEmail);
+  }, []);
+
+  useEffect(() => {
     initRoles();
     initUsers();
-    getSession(setUserId, setEmail);
-    var hasRoleBeenDefined = getLocalStorageVariableHasRoleDefined();
-    if (hasRoleBeenDefined === "true") {
-      supabase.auth.refreshSession().then(() => {
-        navigate("/");
-      });
-    }
-  }, []);
+  }, [userId && email]);
 
   const initRoles = async () => {
     const roles = await userRoleService.initRoles();
@@ -44,13 +41,17 @@ const SignInRole = () => {
   };
 
   const setUserRoles = async () => {
-    updateLocalStorageVariableHasRoleDefined();
-    const user = doesTheUserExist(userRole, userId);
-    if (user === undefined) {
+    const userExist = doesTheUserExist(userRole, userId);
+    if (userExist === undefined) {
       await userRoleService.newUserRole(userId, role);
     } else {
       await userRoleService.updateUserRole(userId, role);
     }
+
+    const { data, error } = await supabase.auth.refreshSession();
+    const { session, user } = data;
+
+    navigate("/");
   };
 
   return (
@@ -63,17 +64,17 @@ const SignInRole = () => {
             type="checkbox"
             onChange={(e) =>
               e.target.checked === true
-                ? i18n.changeLanguage("en")
-                : i18n.changeLanguage("es")
+                ? i18n.changeLanguage("es")
+                : i18n.changeLanguage("en")
             }
           />
           <label htmlFor="language-toggle"></label>
-          <span className="on">ESP</span>
-          <span className="off">ENG</span>
+          <span className="on">ENG</span>
+          <span className="off">ESP</span>
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <form className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
+        <div className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
           <div className="mb-3 ">
             <label className="fs-5 fw-bold">
               {signInTranslation("signIn.emailAddress")}
@@ -106,24 +107,12 @@ const SignInRole = () => {
           <button className="btn btn-primary " onClick={() => setUserRoles()}>
             {signInTranslation("signIn.logIn")}
           </button>
-        </form>
-      </div>
-      <div className=" ">
-        <label className=" textform border border-dark rounded  bg-gradient  p-2 text-dark ">
-          <p className="p-0 m-0 fs-3 fw-bold"> Sitba </p>
-          <p className="p-0 m-0">{signInTranslation("signIn.viewRoleText1")}</p>
-          <p className="p-0 m-0">{signInTranslation("signIn.viewRoleText2")}</p>
-        </label>
+        </div>
       </div>
     </div>
   );
 };
 export default SignInRole;
-
-export function updateLocalStorageVariableHasRoleDefined() {
-  const hasRoleBeenDefined = localStorage.setItem("hasRoleBeenDefined", "true");
-  return hasRoleBeenDefined;
-}
 
 export function doesTheUserExist(userRole: IUserRole[], userId: string) {
   const user = userRole.find((user) => {
@@ -141,9 +130,4 @@ export function getSession(
       setEmail(session!.user.email);
     }
   });
-}
-
-export function getLocalStorageVariableHasRoleDefined() {
-  var hasRoleBeenDefined = localStorage.getItem("hasRoleBeenDefined");
-  return hasRoleBeenDefined;
 }

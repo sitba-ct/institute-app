@@ -4,11 +4,11 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axiosInit from "./utils/axios";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { I18nextProvider } from "react-i18next";
 import { configureLanguages } from "./utils/languages";
 import { configureDependencyInjectionContainer } from "./utils/dependencyInjection";
+import "./index.css";
 
 axiosInit();
 configureDependencyInjectionContainer();
