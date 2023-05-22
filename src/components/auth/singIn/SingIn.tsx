@@ -15,17 +15,14 @@ const SignIn = () => {
   const [signInTranslation] = useTranslation("signIn");
   const [saveButtonEnabled, setSaveButtonEnabled] = useState(true);
   const [errors, setErrors] = useState(new SignUpError());
-
-  const handleSignIn = async () => {
-    updateLocalStorageVariableHasRoleDefined();
-    signInMethod(email);
-  };
+  const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
+    useState(false);
 
   useEffect(() => {
+    setSaveButtonEnabled(true);
     if (Object.values(errors).every((x) => x === "")) {
-      handleSignIn();
+      signInMethod(email, setSuccessfulMaildeliveryMessage);
     } else {
-      setSaveButtonEnabled(true);
     }
   }, [errors]);
 
@@ -77,8 +74,8 @@ const SignIn = () => {
             {signInTranslation("signIn.logIn")}
           </button>
           {errors.email && <p className="errorMessage">{errors.email}</p>}
-          {textEmailSended && (
-            <p className="successfulMaildeliveryMessage">
+          {successfulMaildeliveryMessage && (
+            <p className="successfulMaildeliveryMessage mt-2 fs-5 fw-bold">
               {signInTranslation("signIn.textEmailSended")}
             </p>
           )}
@@ -98,15 +95,10 @@ const SignIn = () => {
 };
 export default SignIn;
 
-export function updateLocalStorageVariableHasRoleDefined() {
-  const hasRoleBeenDefined = localStorage.setItem(
-    "hasRoleBeenDefined",
-    "false"
-  );
-  return hasRoleBeenDefined;
-}
-
-export async function signInMethod(email: string) {
+export async function signInMethod(
+  email: string,
+  setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
+) {
   try {
     const { data, error } = await supabase.auth.signInWithOtp({
       email: email,
@@ -114,6 +106,7 @@ export async function signInMethod(email: string) {
         emailRedirectTo: process.env.REACT_APP_EMAILREDIRECTTO,
       },
     });
+    setSuccessfulMaildeliveryMessage(true);
   } catch (error: any) {
     alert(error.error_description || error.message);
   }
