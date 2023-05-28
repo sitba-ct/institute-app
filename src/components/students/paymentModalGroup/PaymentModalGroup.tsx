@@ -142,7 +142,7 @@ const PaymentModalGroup = (props: variables) => {
                 />
               </div>
 
-              <div className="col-5 ps-4">
+              <div className="col-6 ps-4">
                 <h6>
                   {studentsTranslation(
                     "students.studentCourseCard.paymentModal.paymentMethod"
@@ -169,19 +169,6 @@ const PaymentModalGroup = (props: variables) => {
                   ))}
                 </select>
               </div>
-            </div>
-            <div>
-              <h6>
-                {studentsTranslation(
-                  "students.groupCourseDetails.paymentModalGroup.incomeCategory"
-                )}
-              </h6>
-              <input
-                type="string"
-                className="text-center"
-                value="Cuotas"
-                disabled
-              />
             </div>
           </Form>
         </Modal.Body>
