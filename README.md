@@ -1,6 +1,8 @@
-# Some Details From Sitba Proyect
+## About The App
 
-## Purpose
+We designed and developed a web application that facilitated tools for the consumers to handle the internal processes of an english institute. 
+
+### Purpose
 
 The development of this application has many reasons.
 The most simple AND straightfordward: deliver a product that satisfies the client needs.
@@ -20,21 +22,58 @@ Separating business lógic from components was also a priority.
 
 We also took this opportunites to learn about vanguarding projects like Supabase, Vercel, and get used to PostgressSQL syntax
 
-## Getting Started with Create React App
+### The app supports:
+	• Students management
+	• LogIn authentication
+	• Courses management
+	• Payment Fee register
+	• Student/Group Financial state
+	• Monthly/Anual reports
+	• Role Based functionalities restriction 
+	• English/Spanish language selection
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project we handled all the processes behind a software product development, from it's beginning, 
+### this involved:
+	• Business Rules Requirements Recompilation - Client Communication
+	• Data Modelling
+	• Technology definition
+	• Host acquisition and costs estimation
+	• Infrastracture management
+	• Maintenance Support and Priority Enhancements post delivery Support
 
-## Available Scripts
+### Stages Time:
+	• Business requirements recompilation and data modelling: 4 weeks
+	• Technology definition and rampup: 1 week
+	• Main Development: 6 months
+	• Host and Infrastructure: 1 week
+	• Support, Maintenance and Enhancements: 6 weeks
+	• Total time: 9 months
+	
+### Staff:
+	• 1 Developer 40hs/week
+	• 1 Manager/Developer: 2hs/week
 
-In the project directory, you can run:
+## Technology Stack:
 
- `npm start`
+### Languages
+	• React, Typescript, Javascript, Bootstrap, HTML - CSS - SCSS
+	• PostgresSQL
+	• Supabase (AWS)
+	• Postman
+	• Axios (http communication)
+	• i18next (language support)
+	• Jest (Unit Tests - POC)
 
-Runs the app in the development mode.\
-
- `npm test`
-
-Launches the test runner in the interactive watch mode.\
+### Libraries and framework
+ • Jest - A unit testing framework for JavaScript
+ • Axios - A library for making HTTP requests
+ • Bootstrap - A CSS framework
+ • i18next - A library for internationalization and localization
+ • SASS - A CSS preprocessor
+ • Tsyringe - A dependency injection framework for TypeScript
+ 
+Hight Code Quallity:
+We do not limit to accomplish the functional requirements, but we promote and put effort in achieving good code quality. This extra effort achieves efficiency and scalability, reducing development time in a long term perspective, reduces bugs, promotes code testability, and decreases ramp-up learning time for future contributors.
 
 ## Scripts to populate Data Base
 
@@ -51,25 +90,6 @@ These scripts are complex and can be time-consuming to write. However, they can 
    To create the simple scripts this proyect use the next program:
 
 - Mockaroo - A random data generator that can be used to create realistic data sets for testing and development.
-
-## Technologies
-
-### Languages
-
-- TypeScript
-- SCSS
-- JavaScript
-
-### Libraries and framework
-
-   This project uses the following libraries and frameworks:
-
-- Jest - A unit testing framework for JavaScript
-- Axios - A library for making HTTP requests
-- Bootstrap - A CSS framework
-- i18next - A library for internationalization and localization
-- SASS - A CSS preprocessor
-- Tsyringe - A dependency injection framework for TypeScript
 
 ## Modeling
 
