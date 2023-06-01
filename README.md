@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Some Details From Sitba Proyect
 
 ## Purpose
 
@@ -22,15 +20,19 @@ Separating business lógic from components was also a priority.
 
 We also took this opportunites to learn about vanguarding projects like Supabase, Vercel, and get used to PostgressSQL syntax
 
+## Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+ `npm start`
 
 Runs the app in the development mode.\
 
-### `npm test`
+ `npm test`
 
 Launches the test runner in the interactive watch mode.\
 
