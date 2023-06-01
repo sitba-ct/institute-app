@@ -36,17 +36,17 @@ Launches the test runner in the interactive watch mode.\
 
 ## Scripts to populate Data Base
 
-    This project uses the following scripts to perform complex tasks:
+   This project uses the following scripts to perform complex tasks:
 
 - populatePayStudentsWithGroup - A script that populates the PostgreSQL database with data for students who are in a group.
-  To access file, click [here](https://github.com/sitba-ct/institute-app/tree/main/script/populatePayStudentsWithGroup)
+  To access file, click [here](https://github.com/sitba-ct/institute-app/blob/main/script/populatePayStudentsWithGroup.sql)
 
 - populatePayStudentsWithNoGroup - A script that populates the PostgreSQL database with data for students who are not in a group.
-  To access file, click [here](https://github.com/sitba-ct/institute-app/tree/main/script/populatePayStudentsWithNoGroup)
+  To access file, click [here](https://github.com/sitba-ct/institute-app/blob/main/script/populatePayStudentsWithNoGroup.sql)
 
 These scripts are complex and can be time-consuming to write. However, they can save you a lot of time and effort in the long run.
 
-    To create the simple scripts this proyect use the next program:
+   To create the simple scripts this proyect use the next program:
 
 - Mockaroo - A random data generator that can be used to create realistic data sets for testing and development.
 
@@ -60,7 +60,7 @@ These scripts are complex and can be time-consuming to write. However, they can 
 
 ### Libraries and framework
 
-    This project uses the following libraries and frameworks:
+   This project uses the following libraries and frameworks:
 
 - Jest - A unit testing framework for JavaScript
 - Axios - A library for making HTTP requests
@@ -73,4 +73,5 @@ These scripts are complex and can be time-consuming to write. However, they can 
 
 This project uses the Lucidchart flowcharting software to create visual representations of the system.
 
-Here
+<img width="751" alt="Modeling" src="https://github.com/sitba-ct/institute-app/assets/99862776/6b5779ed-e829-4ff1-9249-d9a41437499f">
+
