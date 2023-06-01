@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Purpose
+
+The development of this application has many reasons.
+The most simple AND straightfordward: deliver a product that satisfies the client needs.
+
+That Is just the surface.
+The main goals behind this development were to instruct a non-experienced developer in many of múltiple aspects required for a web development, Without compromising deliverable times and features.
+
+The code in the app was 95% developed by someone that started with no React, no Typescript, no SQL, no HTTP, no Authentication mechanisms formal experience.
+
+We put high priority to Interfaces, Services, Models definition, AND naming conventions.
+
+With these we expect inspecting AND understanding the app be intutive AND Easy readable.
+
+Since the app relies in intefaces AND strong type methods, improving perfomance AND extend development should not be an impediment.
+
+Separating business lógic from components was also a priority.
+
+We also took this opportunites to learn about vanguarding projects like Supabase, Vercel, and get used to PostgressSQL syntax
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -9,15 +29,10 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Scripts to populate Data Base
 
@@ -59,23 +74,3 @@ These scripts are complex and can be time-consuming to write. However, they can 
 This project uses the Lucidchart flowcharting software to create visual representations of the system.
 
 Here
-
-## Purpose
-
-The development of this application has many reasons.
-The most simple AND straightfordward: deliver a product that satisfies the client needs.
-
-That Is just the surface.
-The main goals behind this development were to instruct a non-experienced developer in many of múltiple aspects required for a web development, Without compromising deliverable times and features.
-
-The code in the app was 95% developed by someone that started with no React, no Typescript, no SQL, no HTTP, no Authentication mechanisms formal experience.
-
-We put high priority to Interfaces, Services, Models definition, AND naming conventions.
-
-With these we expect inspecting AND understanding the app be intutive AND Easy readable.
-
-Since the app relies in intefaces AND strong type methods, improving perfomance AND extend development should not be an impediment.
-
-Separating business lógic from components was also a priority.
-
-We also took this opportunites to learn about vanguarding projects like Supabase, Vercel, and get used to PostgressSQL syntax
