@@ -61,7 +61,7 @@ const BookletPaymentControl = () => {
     let hasUserRequiredRole = "";
     if (session) {
       let sessionAsObject = JSON.parse(session);
-      hasUserRequiredRole = sessionAsObject.user.user_metadata.ken_role;
+      hasUserRequiredRole = sessionAsObject.user.user_metadata.demo_app_role;
       setRole(hasUserRequiredRole);
     }
   };

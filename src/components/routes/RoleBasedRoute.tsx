@@ -12,7 +12,7 @@ const RoleBasedRoute = (props: IProps): any => {
   if (session) {
     let sessionAsObject = JSON.parse(session);
     hasUserRequiredRole =
-      sessionAsObject.user.user_metadata.ken_role === props.role;
+      sessionAsObject.user.user_metadata.demo_app_role === props.role;
   }
 
   return hasUserRequiredRole ? props.children : <Navigate to="/" />;

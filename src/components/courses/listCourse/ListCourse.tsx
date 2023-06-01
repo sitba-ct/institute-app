@@ -117,7 +117,7 @@ const getUserRole = () => {
   let session = getSessionFromStorage(); // we can only get here after user has logged in and therefore session is defined
   if (session) {
     let sessionAsObject = JSON.parse(session);
-    let userRole = sessionAsObject.user.user_metadata.ken_role;
+    let userRole = sessionAsObject.user.user_metadata.demo_app_role;
     return userRole;
   }
 };
