@@ -20,10 +20,13 @@ import { useNavigate } from "react-router-dom";
 import PaymentMethod from "../../services/income/paymentMethods/PaymentMethod";
 import IPaymentMethod from "../../services/income/paymentMethods/IPaymentMethod";
 import { container } from "tsyringe";
+import { useTranslation } from "react-i18next";
 
 const CashFlows = () => {
   const incomeService = container.resolve(IncomeService);
   const outflowService = container.resolve(OutflowService);
+
+  const [cashFlowTranslation] = useTranslation("cashFlow");
 
   const navigate = useNavigate();
 
@@ -129,7 +132,11 @@ const CashFlows = () => {
           navigate("/cashflow/bookletPaymentControl");
         }}
       >
-        <div className=" incomesPerStudentButton">Pago de Booklet</div>
+        <div className=" incomesPerStudentButton">
+          {cashFlowTranslation(
+            "cashFlow.bookletPaymentControl.bookletPaymentControl"
+          )}
+        </div>
       </div>
 
       <div
@@ -138,7 +145,11 @@ const CashFlows = () => {
           navigate("/cashflow/daily");
         }}
       >
-        <div className=" incomesPerStudentButton">Flujo de caja diario</div>
+        <div className=" incomesPerStudentButton">
+          {cashFlowTranslation(
+            "cashFlow.dailyCashflow.initialDailyCash.cashBox"
+          )}
+        </div>
       </div>
     </div>
   );

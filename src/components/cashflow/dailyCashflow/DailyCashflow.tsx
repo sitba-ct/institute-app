@@ -9,7 +9,6 @@ import { supabase } from "../../../utils/supabaseClient";
 import "./dailyCashflow.scss";
 import InitialDailyCash from "./InitialDailyCash";
 import { container } from "tsyringe";
-import { IndexKind } from "typescript";
 
 const DailyCashflow = () => {
   const [cashFlowTranslation] = useTranslation("cashFlow");

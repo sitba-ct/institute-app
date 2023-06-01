@@ -26,6 +26,7 @@
       "saveChanges": "Save Changes"
     },
     "bookletPaymentControl": {
+      "bookletPaymentControl": "Booklet Payment",
       "category": "Select Category",
       "surname": "Surname",
       "search": "Search",
@@ -58,6 +59,7 @@
       "result": "Result",
 
       "initialDailyCash": {
+        "cashBox": "Cash Box",
         "initialDailyCash": "Initial Daily Cash",
         "close": "Close",
         "save": "Save",

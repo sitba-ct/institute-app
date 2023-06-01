@@ -26,6 +26,7 @@
       "saveChanges": "Guardar"
     },
     "bookletPaymentControl": {
+      "bookletPaymentControl": "Pago Del Libro",
       "category": "Selecciona La Categoria",
       "surname": "Apellido",
       "search": "Buscar",
@@ -58,8 +59,9 @@
       "result": "Resultado",
 
       "initialDailyCash": {
-        "initialDailyCash": "Efectivo inicial del dia",
+        "cashBox": "Caja De Efectivo",
 
+        "initialDailyCash": "Efectivo inicial del dia",
         "close": "Cerrar",
         "save": "Guardar",
         "cashAmount": "Cantidad de Efectivo",
