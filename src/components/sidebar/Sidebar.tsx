@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import INavItem from "../../services/sideBar/INavItems";
-import LogOut from "../auth/logOut/LogOut";
-import "./sidebar.scss";
+import "../layout/appLayout.scss";
 import getSessionFromStorage from "../../services/auth/SessionService";
 
 type sidebarProps = {
@@ -24,15 +23,15 @@ const Sidebar = (props: sidebarProps) => {
   const [userRole, setUserRole] = useState<string>();
 
   useEffect(() => {
-    setTimeout(() => {
-      if (sidebarRef.current.querySelector(".sidebar__menu__item") !== null) {
-        const sidebarItem = sidebarRef.current.querySelector(
-          ".sidebar__menu__item"
-        );
-        indicatorRef.current.style.height = `${sidebarItem.clientHeight}px`;
-        setStepHeight(sidebarItem.clientHeight);
-      }
-    }, 50);
+    // setTimeout(() => {
+    //   if (sidebarRef.current.querySelector(".sidebar__menu__item") !== null) {
+    //     const sidebarItem = sidebarRef.current.querySelector(
+    //       ".sidebar__menu__item"
+    //     );
+    //     indicatorRef.current.style.height = `${sidebarItem.clientHeight}px`;
+    //     setStepHeight(sidebarItem.clientHeight);
+    //   }
+    // }, 50);
 
     let session = getSessionFromStorage(); // we can only get here after user has logged in and therefore session is defined
     if (session) {
@@ -73,8 +72,71 @@ const Sidebar = (props: sidebarProps) => {
   }, [location]);
 
   return (
-    <div className="sidebar">
-      <div className="sidebar__logo">S I T B A</div>
+    <div className="sidebar-container">
+      <div className="sidebar-container__header">
+        <div className="sidebar-container__header__logo">
+          <i className="fa fa-bandcamp" aria-hidden="true"></i>
+          <div className="sidebar-container__header__brand">S I T B A</div>
+          <div className="sidebar-container__list">
+            <div className="sidebar-container__list__item">
+              <div className="sidebar-container__list__item__img">
+                <i className="bx bx-body"></i>
+              </div>
+              <div className="sidebar-container__list__item__title">
+                Students
+              </div>
+            </div>
+            <div className="sidebar-container__list__item">
+              <div className="sidebar-container__list__item__img">
+                <i className="bx bx-book"></i>
+              </div>
+              <div className="sidebar-container__list__item__title">
+                Courses
+              </div>
+            </div>
+            <div className="sidebar-container__list__item">
+              <div className="sidebar-container__list__item__img">
+                <i className="bx bx-group"></i>
+              </div>
+              <div className="sidebar-container__list__item__title">Groups</div>
+            </div>
+            <div className="sidebar-container__list__item">
+              <div className="sidebar-container__list__item__img">
+                <i className="bx bx-money"></i>
+              </div>
+              <div className="sidebar-container__list__item__title">
+                cashflow
+              </div>
+            </div>
+            <div className="sidebar-container__list__item">
+              <div className="sidebar-container__list__item__img">
+                <i className="bx bx-line-chart"></i>
+              </div>
+              <div className="sidebar-container__list__item__title">
+                Reports
+              </div>
+            </div>
+            <div className="sidebar-container__list__item">
+              <div className="sidebar-container__list__item__img">
+                <i className="bx bx-log-out"></i>
+              </div>
+              <div className="sidebar-container__list__item__title">LogOut</div>
+            </div>
+          </div>
+          <div className="sidebar-container__footer">
+            <div className="sidebar-container__footer__logo"></div>
+            <div className="sidebar-container__footer__data">
+              <div className="sidebar-container__footer__data__title">
+                vicotio testa
+              </div>
+              <div className="sidebar-container__footer__data__subtitle">
+                full stack developer
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="sidebar__logo">S I T B A</div>
       <div ref={sidebarRef} className="sidebar__menu ">
         <div
           ref={indicatorRef}
@@ -99,8 +161,7 @@ const Sidebar = (props: sidebarProps) => {
             </div>
           </Link>
         ))}
-        {/* <div className="sitbaLogo ">S I T B A</div> */}
-      </div>
+      </div> */}
     </div>
   );
 };

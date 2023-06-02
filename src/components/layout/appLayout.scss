@@ -1,3 +1,104 @@
+//General
+body {
+  height: 100vh;
+  display: flex;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Sidebar
+.sidebar-container {
+  width: 500px;
+  height: 100%;
+  background-color: rgb(16, 8, 24);
+  @include mobile {
+    width: 50px;
+  }
+  &__header {
+    display: flex;
+    padding: 15px 20px;
+    background-color: rgb(45, 30, 61);
+    gap: 15px;
+    &__logo {
+      color: white;
+    }
+    &__brand {
+      color: white;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
+//sideBar list
+.sidebar-container {
+  &__list {
+    color: white;
+    margin-top: 10px;
+    &__item {
+      cursor: pointer;
+      padding: 15px 20px;
+      @include mobile {
+        padding: 15px 0px;
+      }
+      display: flex;
+      gap: 15px;
+      color: rgba(255, 255, 255, 0.6999);
+      transition: all 0.3s ease;
+      &__title {
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+    &__item:hover {
+      color: white;
+      background-color: rgb(45, 30, 61);
+    }
+  }
+}
+//sideBar footer
+.sidebar-container {
+  position: relative;
+  &__footer {
+    @include mobile {
+      display: none;
+    }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(45, 30, 61);
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px;
+    &__logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: url(https://fastly.picsum.photos/id/888/200/300.jpg?hmac=WJcjbSQSOOzfBpPsUKZHZzjBCJjDv43RwJ8P8Ag2xj4);
+      background-size: cover;
+      background-position: center;
+    }
+    &__data {
+      &__title {
+        font-weight: 500;
+        color: white;
+      }
+      &__subtitle {
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.644);
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
 .outlet {
   flex: 0 0 auto;
   width: 72%;

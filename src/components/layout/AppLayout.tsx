@@ -68,18 +68,14 @@ const AppLayout = () => {
   const [t, i18n] = useTranslation();
 
   return (
-    <div className="d-flex flex-row">
-      <div className="col-3">
-        <Sidebar
-          sidebarNavItems={sidebarNavItems.filter(
-            (navItem) => navItem.isVisible === true
-          )}
-        />
-      </div>
+    <body>
+      <Sidebar
+        sidebarNavItems={sidebarNavItems.filter(
+          (navItem) => navItem.isVisible === true
+        )}
+      />
       <div className="d-flex flex-column outlet">
-        <div>
-          <Outlet />
-        </div>
+        <Outlet />
         <div className="outletDropdown">
           <div className="switch">
             <input
@@ -98,7 +94,7 @@ const AppLayout = () => {
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 
