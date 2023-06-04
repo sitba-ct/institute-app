@@ -1,9 +1,19 @@
 {
   "sidebar": {
     "Students": "Estudiantes",
-    "Courses": "Cursos",
+    "Courses": {
+      "Courses": "Cursos",
+      "changeCourseFees": "Cambiar cuota del curso",
+      "listCourses": "Lista de cursos"
+    },
     "Groups": "Grupos",
-    "Cashflow": "Flujo de fondos",
+    "Cashflow": {
+      "Cashflow": "Flujo de fondos",
+      "addIncome": "Agregar Ingreso",
+      "addOutflow": "Agregar Egreso",
+      "bookletPaymentControl": "Pago Del Libro",
+      "cashBox": "Cash Box"
+    },
     "Reports": "Reportes",
     "SignUp": "Registrar usuarios",
     "LogOut": "Salir"

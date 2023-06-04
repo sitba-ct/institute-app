@@ -21,6 +21,8 @@ const Sidebar = (props: sidebarProps) => {
     props.sidebarNavItems
   );
   const [userRole, setUserRole] = useState<string>();
+  const [expandCourses, setExpandCourses] = useState<boolean>(false);
+  const [expandCashflow, setExpandCashflow] = useState<boolean>(false);
 
   useEffect(() => {
     // setTimeout(() => {
@@ -83,44 +85,86 @@ const Sidebar = (props: sidebarProps) => {
                 <i className="bx bx-body"></i>
               </div>
               <div className="sidebar-container__list__item__title">
-                Students
+                {sidebarTranslation("sidebar.Students")}
               </div>
             </div>
-            <div className="sidebar-container__list__item">
+            <div
+              className="sidebar-container__list__item"
+              onClick={() => setExpandCourses(!expandCourses)}
+            >
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-book"></i>
               </div>
               <div className="sidebar-container__list__item__title">
-                Courses
+                {sidebarTranslation("sidebar.Courses.Courses")}
               </div>
             </div>
+            <ul
+              className={`sidebar-container__list__itemSub ${
+                expandCourses ? "active" : ""
+              }`}
+            >
+              <li>
+                <a> {sidebarTranslation("sidebar.Courses.changeCourseFees")}</a>
+              </li>
+              <li>
+                <a> {sidebarTranslation("sidebar.Courses.listCourses")}</a>
+              </li>
+            </ul>
             <div className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-group"></i>
               </div>
-              <div className="sidebar-container__list__item__title">Groups</div>
+              <div className="sidebar-container__list__item__title">
+                {sidebarTranslation("sidebar.Groups")}
+              </div>
             </div>
-            <div className="sidebar-container__list__item">
+            <div
+              className="sidebar-container__list__item"
+              onClick={() => setExpandCashflow(!expandCashflow)}
+            >
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-money"></i>
               </div>
               <div className="sidebar-container__list__item__title">
-                cashflow
+                {sidebarTranslation("sidebar.Cashflow.Cashflow")}
               </div>
             </div>
+            <ul
+              className={`sidebar-container__list__itemSub ${
+                expandCashflow ? "active" : ""
+              }`}
+            >
+              <li>
+                <a> {sidebarTranslation("sidebar.Cashflow.addIncome")}</a>
+              </li>
+              <li>
+                <a> {sidebarTranslation("sidebar.Cashflow.addOutflow")}</a>
+              </li>
+              <li>
+                <a>
+                  {sidebarTranslation("sidebar.Cashflow.bookletPaymentControl")}
+                </a>
+              </li>
+              <li>
+                <a> {sidebarTranslation("sidebar.Cashflow.cashBox")}</a>
+              </li>
+            </ul>
             <div className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-line-chart"></i>
               </div>
               <div className="sidebar-container__list__item__title">
-                Reports
+                {sidebarTranslation("sidebar.Reports")}
               </div>
             </div>
             <div className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-log-out"></i>
               </div>
-              <div className="sidebar-container__list__item__title">LogOut</div>
+              <div className="sidebar-container__list__item__title">
+                {sidebarTranslation("sidebar.LogOut")}
+              </div>
             </div>
           </div>
           <div className="sidebar-container__footer">
