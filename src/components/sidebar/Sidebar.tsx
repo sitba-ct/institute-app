@@ -4,6 +4,11 @@ import { Link, useLocation } from "react-router-dom";
 import INavItem from "../../services/sideBar/INavItems";
 import "../layout/appLayout.scss";
 import getSessionFromStorage from "../../services/auth/SessionService";
+import { BiBody } from "react-icons/bi";
+import { BsCashCoin } from "react-icons/bs";
+import React from "react";
+import AddIncome from "../cashflow/incomes/addIncome/AddIncome";
+import AddOutflow from "../cashflow/outFlows/addOutflow/AddOutflow";
 
 type sidebarProps = {
   sidebarNavItems: INavItem[];
@@ -80,15 +85,17 @@ const Sidebar = (props: sidebarProps) => {
           <i className="fa fa-bandcamp" aria-hidden="true"></i>
           <div className="sidebar-container__header__brand">S I T B A</div>
           <div className="sidebar-container__list">
-            <div className="sidebar-container__list__item">
+            <Link to={"/students"} className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
-                <i className="bx bx-body"></i>
+                <BiBody size="2rem" />
               </div>
               <div className="sidebar-container__list__item__title">
                 {sidebarTranslation("sidebar.Students")}
               </div>
-            </div>
-            <div
+            </Link>
+
+            <Link
+              to={"/courses"}
               className="sidebar-container__list__item"
               onClick={() => setExpandCourses(!expandCourses)}
             >
@@ -98,7 +105,7 @@ const Sidebar = (props: sidebarProps) => {
               <div className="sidebar-container__list__item__title">
                 {sidebarTranslation("sidebar.Courses.Courses")}
               </div>
-            </div>
+            </Link>
             <ul
               className={`sidebar-container__list__itemSub ${
                 expandCourses ? "active" : ""
@@ -111,61 +118,65 @@ const Sidebar = (props: sidebarProps) => {
                 <a> {sidebarTranslation("sidebar.Courses.listCourses")}</a>
               </li>
             </ul>
-            <div className="sidebar-container__list__item">
+            <Link to={"/groups"} className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-group"></i>
               </div>
               <div className="sidebar-container__list__item__title">
                 {sidebarTranslation("sidebar.Groups")}
               </div>
-            </div>
-            <div
+            </Link>
+            <Link
+              to={"/Cashflow"}
               className="sidebar-container__list__item"
               onClick={() => setExpandCashflow(!expandCashflow)}
             >
               <div className="sidebar-container__list__item__img">
-                <i className="bx bx-money"></i>
+                <BsCashCoin size="2rem" />
               </div>
               <div className="sidebar-container__list__item__title">
                 {sidebarTranslation("sidebar.Cashflow.Cashflow")}
               </div>
-            </div>
+            </Link>
             <ul
               className={`sidebar-container__list__itemSub ${
                 expandCashflow ? "active" : ""
               }`}
             >
               <li>
-                <a> {sidebarTranslation("sidebar.Cashflow.addIncome")}</a>
+                <AddIncome />
               </li>
               <li>
-                <a> {sidebarTranslation("sidebar.Cashflow.addOutflow")}</a>
+                <AddOutflow />
               </li>
               <li>
-                <a>
+                <Link to={"/cashflow/bookletPaymentControl"}>
                   {sidebarTranslation("sidebar.Cashflow.bookletPaymentControl")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a> {sidebarTranslation("sidebar.Cashflow.cashBox")}</a>
+                <Link to={"/cashflow/daily"}>
+                  {sidebarTranslation("sidebar.Cashflow.cashBox")}
+                </Link>
               </li>
             </ul>
-            <div className="sidebar-container__list__item">
+            <Link to={"/Reports"} className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-line-chart"></i>
               </div>
               <div className="sidebar-container__list__item__title">
                 {sidebarTranslation("sidebar.Reports")}
               </div>
-            </div>
-            <div className="sidebar-container__list__item">
+            </Link>
+
+            <Link to={"/LogOut"} className="sidebar-container__list__item">
               <div className="sidebar-container__list__item__img">
                 <i className="bx bx-log-out"></i>
               </div>
               <div className="sidebar-container__list__item__title">
                 {sidebarTranslation("sidebar.LogOut")}
               </div>
-            </div>
+            </Link>
           </div>
           <div className="sidebar-container__footer">
             <div className="sidebar-container__footer__logo"></div>
@@ -180,32 +191,6 @@ const Sidebar = (props: sidebarProps) => {
           </div>
         </div>
       </div>
-      {/* <div className="sidebar__logo">S I T B A</div>
-      <div ref={sidebarRef} className="sidebar__menu ">
-        <div
-          ref={indicatorRef}
-          className="sidebar__menu__indicator "
-          style={{
-            transform: `translateX(-50%) translateY(${
-              activeIndex * stepHeight
-            }px)`,
-          }}
-        ></div>
-        {visibleNavBarItems.map((item, index) => (
-          <Link to={item.to} key={index}>
-            <div
-              className={`sidebar__menu__item ${
-                activeIndex === index ? "active" : ""
-              }`}
-            >
-              <div className="sidebar__menu__item__icon">{item.icon}</div>
-              <div className="sidebar__menu__item__text">
-                {sidebarTranslation("sidebar." + item.display)}
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div> */}
     </div>
   );
 };

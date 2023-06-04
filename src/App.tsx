@@ -12,7 +12,6 @@ import GroupStudents from "./components/groups/groupStudents/GroupStudents";
 import CourseStudents from "./components/courses/courseStudents/CourseStudents";
 import { Provider } from "./context/Provider";
 import PrivateRoute from "./components/routes/PrivateRoute";
-import CashFlows from "./components/cashflow/CashFlow";
 import RoleBasedRoute from "./components/routes/RoleBasedRoute";
 import ErrorBoudary from "./error/ErrorBoudary";
 import Reports from "./components/reports/Reports";
@@ -53,7 +52,6 @@ function App() {
             </Route>
 
             <Route path="/cashflow">
-              <Route index element={<CashFlows />} />
               <Route
                 path="bookletPaymentControl"
                 element={<BookletPaymentControl />}
