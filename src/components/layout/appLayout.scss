@@ -2,6 +2,13 @@
 body {
   height: 100vh;
   display: flex;
+  width: 100vw;
+}
+
+.outlet {
+  flex: 0 0 auto;
+  width: 80%;
+  height: 100%;
 }
 
 @mixin mobile {
@@ -12,22 +19,25 @@ body {
 
 // Sidebar
 .sidebar-container {
-  width: 500px;
+  width: 20%;
   height: 100%;
-  background-color: rgb(16, 8, 24);
+  background-color: rgb(146, 194, 241);
   @include mobile {
     width: 50px;
   }
   &__header {
     display: flex;
     padding: 15px 20px;
-    background-color: rgb(45, 30, 61);
+    @include mobile {
+      padding: 15px 5px;
+    }
+    background-color: rgb(146, 194, 241);
     gap: 15px;
     &__logo {
-      color: white;
+      color: black;
     }
     &__brand {
-      color: white;
+      color: black;
       @include mobile {
         display: none;
       }
@@ -38,50 +48,18 @@ body {
 //sideBar list
 .sidebar-container {
   &__list {
-    color: white;
-    margin-top: 10px;
-    &__itemSub {
-      color: #333;
-      margin-bottom: 0;
-      margin-left: 35px;
-      border-left: 1px solid #666;
-      box-sizing: border-box;
-      padding-left: 30px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-in;
-      &.active {
-        max-height: 200px;
-      }
-      a {
-        display: block;
-        margin: 5px 0;
-        font-size: 15px;
-        font-weight: 600;
-        text-decoration: none;
-        color: #333;
-        box-sizing: border-box;
-        padding: 5px;
-        &.active {
-          /* change in background, not recorded in video */
-          background: #222;
-          display: block;
-
-          border-radius: 5px;
-          color: #fff;
-        }
-      }
-    }
     &__item {
       text-decoration: none;
       cursor: pointer;
-      padding: 15px 20px;
+      padding: 5px 20px 5px 5px;
+      margin: 5px 5px 0px 5px;
       @include mobile {
-        padding: 15px 0px;
+        padding: 4px 5px 5px 5px;
+        margin: 0px 5px 5px 5px;
       }
       display: flex;
       gap: 15px;
-      color: rgba(255, 255, 255, 0.6999);
+      color: #666;
       transition: all 0.3s ease;
       &__title {
         @include mobile {
@@ -91,7 +69,42 @@ body {
     }
     &__item:hover {
       color: white;
-      background-color: rgb(45, 30, 61);
+      background-color: #33ade173;
+      border: 1px solid #666;
+      border-radius: 5px;
+    }
+    &__itemSub {
+      margin: 2px 5px 0px 15px;
+      border-left: 1px solid #666;
+      padding: 0px 0px 0px 5px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-in;
+      &.active {
+        max-height: 200px;
+        @include mobile {
+          margin: 5px 0px 0px 5px;
+          padding: 0px 0px 0px 0px;
+        }
+      }
+      &__detail {
+        display: block;
+        margin: 5px 0px 0px 0px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #666;
+        box-sizing: border-box;
+        padding: 5px, 0px, 0px, 0px;
+        @include mobile {
+          font-size: 0px;
+          margin: 0px 0px 0px 3px;
+          color: #666;
+        }
+      }
+      &__detail:hover {
+        color: #1e6e91;
+      }
     }
   }
 }
@@ -107,23 +120,23 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(45, 30, 61);
+    background-color: rgb(146, 194, 241);
     display: flex;
     align-items: center;
     padding: 15px 20px;
     gap: 15px;
     &__logo {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      background: url(https://fastly.picsum.photos/id/888/200/300.jpg?hmac=WJcjbSQSOOzfBpPsUKZHZzjBCJjDv43RwJ8P8Ag2xj4);
+      background-image: url("sitba.png");
       background-size: cover;
       background-position: center;
     }
     &__data {
       &__title {
         font-weight: 500;
-        color: white;
+        color: #666;
       }
       &__subtitle {
         font-weight: 400;
@@ -132,12 +145,6 @@ body {
       }
     }
   }
-}
-
-.outlet {
-  flex: 0 0 auto;
-  width: 72%;
-  height: 100%;
 }
 
 .outletDropdown {

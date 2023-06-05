@@ -18,6 +18,7 @@ import ICategoryMonthlyIncome from "../../../../services/income/incomePerMonthAn
 import PaymentMethod from "../../../../services/income/paymentMethods/PaymentMethod";
 import IncomeCategory from "../../../../services/income/incomeCategory/IncomeCategory";
 import CategoryMonthlyIncome from "../../../../services/income/incomePerMonthAndCategory/CategoryMonthlyIncome";
+import { MdOutlineAdd } from "react-icons/md";
 
 const AddIncome = () => {
   const incomeService = container.resolve(IncomeService);
@@ -103,8 +104,10 @@ const AddIncome = () => {
   }, [errors]);
 
   return (
-    <div>
-      <div onClick={() => handleShow()} className="incomeButton">
+    <div className="income-container">
+      <div onClick={() => handleShow()} className="income-container__button">
+        <MdOutlineAdd size="1.5rem" className="me-3" />
+
         {cashFlowTranslation("cashFlow.addIncome.addIncome")}
       </div>
       <Modal show={showModal} onHide={handleClose}>

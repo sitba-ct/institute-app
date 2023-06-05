@@ -17,6 +17,7 @@ import OutflowCategoryMonthly from "../../../../services/outflow/outflowPerMonth
 import OutflowCategory from "../../../../services/outflow/outflowCategory/OutflowCategory";
 import PaymentMethod from "../../../../services/income/paymentMethods/PaymentMethod";
 import "./addOutflow.scss";
+import { AiOutlineMinus } from "react-icons/ai";
 
 const AddOutflow = () => {
   const outflowService = container.resolve(OutflowService);
@@ -105,8 +106,9 @@ const AddOutflow = () => {
   }, [errors]);
 
   return (
-    <div>
-      <div onClick={() => handleShow()} className=" outFlowButton">
+    <div className="ouflow-container">
+      <div onClick={() => handleShow()} className="ouflow-container__button">
+        <AiOutlineMinus size="1.5rem" className="me-3" />
         {cashFlowTranslation("cashFlow.addOutflow.addOutflow")}
       </div>
       <Modal show={showModal} onHide={handleClose}>
