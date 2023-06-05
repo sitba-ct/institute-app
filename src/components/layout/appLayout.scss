@@ -19,6 +19,9 @@ body {
 
 // Sidebar
 .sidebar-container {
+  font-family: "Segoe UI Symbol";
+  font-size: large;
+  font-weight: bold;
   width: 20%;
   height: 100%;
   background-color: rgb(146, 194, 241);
@@ -48,6 +51,15 @@ body {
 //sideBar list
 .sidebar-container {
   &__list {
+    max-height: 70%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      /* WebKit */
+      width: 10;
+      height: 0;
+    }
+
     &__item {
       text-decoration: none;
       cursor: pointer;

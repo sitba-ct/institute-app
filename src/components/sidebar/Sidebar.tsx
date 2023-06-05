@@ -31,12 +31,12 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar-container">
-      {/* <div className="sidebar-container__header">
+      <div className="sidebar-container__header">
         <div className="sidebar-container__header__logo">
           <i className="fa fa-bandcamp" aria-hidden="true"></i>
           <div className="sidebar-container__header__brand"></div>
         </div>
-      </div> */}
+      </div>
       <div className="sidebar-container__list">
         <Link to={"/students"} className="sidebar-container__list__item">
           <div className="sidebar-container__list__item__img">
