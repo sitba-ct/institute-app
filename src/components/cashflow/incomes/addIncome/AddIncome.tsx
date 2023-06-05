@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Income from "../../../../services/income/Income";
 import IIncome from "../../../../services/income/IIncome";
 import { IncomeService } from "../../../../services/income/IncomeService";
@@ -14,18 +14,15 @@ import IStudentBasicInfo from "../../../../services/students/BasicInfo/IBasicInf
 import { useTranslation } from "react-i18next";
 import IPaymentMethod from "../../../../services/income/paymentMethods/IPaymentMethod";
 import { container } from "tsyringe";
+import ICategoryMonthlyIncome from "../../../../services/income/incomePerMonthAndCategory/ICategoryMonthlyIncome";
+import PaymentMethod from "../../../../services/income/paymentMethods/PaymentMethod";
+import IncomeCategory from "../../../../services/income/incomeCategory/IncomeCategory";
+import CategoryMonthlyIncome from "../../../../services/income/incomePerMonthAndCategory/CategoryMonthlyIncome";
+import { MdOutlineAdd } from "react-icons/md";
 
-type ImportVariables = {
-  initIncomesCategory: Function;
-  incomes: IIncome[];
-  incomeCategory: IIncomeCategory[];
-  paymentMethods: IPaymentMethod[];
-};
-
-const AddIncome = (props: ImportVariables) => {
+const AddIncome = () => {
   const incomeService = container.resolve(IncomeService);
   const incomeValidationService = container.resolve(IncomeValidationService);
-  const studentService = container.resolve(StudentService);
 
   const [cashFlowTranslation] = useTranslation("cashFlow");
 
@@ -35,19 +32,30 @@ const AddIncome = (props: ImportVariables) => {
   const [showStudentName, setShowStudentName] = useState<boolean>(true);
   const [students, setStudents] = useState<IStudentBasicInfo[]>([]);
   const [studentIncomes, setStudentIncomes] = useState<Income[]>();
-
+  const [incomesCategory, setIncomesCategory] = useState<
+    ICategoryMonthlyIncome[]
+  >([new CategoryMonthlyIncome()]);
+  const [incomeCategory, setIncomeCategory] = useState<IIncomeCategory[]>([
+    new IncomeCategory(),
+  ]);
+  const [paymentMethods, setPaymentMethod] = useState<IPaymentMethod[]>([
+    new PaymentMethod(),
+  ]);
+  const [incomes, setIncomes] = useState<IIncome[]>([new Income()]);
   const [errors, setErrors] = useState<IIncomeError>(new IncomeError());
 
   const [saveButtonEnabled, setSaveButtonEnabled] = useState<boolean>(true);
 
   useEffect(() => {
-    initStudent();
+    initData(
+      incomeService,
+      setIncomesCategory,
+      setIncomeCategory,
+      setPaymentMethod,
+      setIncomes,
+      setStudents
+    );
   }, []);
-
-  const initStudent = async () => {
-    let studentsBasicInfo = await studentService.getStudentsBasicInfo();
-    setStudents(studentsBasicInfo);
-  };
 
   const initStudentIncomes = async () => {
     if (income.studentId !== null) {
@@ -96,8 +104,10 @@ const AddIncome = (props: ImportVariables) => {
   }, [errors]);
 
   return (
-    <div>
-      <div onClick={() => handleShow()} className=" incomeButton">
+    <div className="income-container">
+      <div onClick={() => handleShow()} className="income-container__button">
+        <MdOutlineAdd size="1.5rem" className="me-3" />
+
         {cashFlowTranslation("cashFlow.addIncome.addIncome")}
       </div>
       <Modal show={showModal} onHide={handleClose}>
@@ -109,7 +119,7 @@ const AddIncome = (props: ImportVariables) => {
         <Modal.Body className="">
           <Form>
             <ModalIncome
-              incomeCategory={props.incomeCategory}
+              incomeCategory={incomeCategory}
               income={income}
               setIncome={setIncome}
               errors={errors}
@@ -117,7 +127,7 @@ const AddIncome = (props: ImportVariables) => {
               setShowStudentName={setShowStudentName}
               showStudentName={showStudentName}
               students={students}
-              paymentMethods={props.paymentMethods}
+              paymentMethods={paymentMethods}
             />
           </Form>
         </Modal.Body>
@@ -139,3 +149,60 @@ const AddIncome = (props: ImportVariables) => {
 };
 
 export default AddIncome;
+
+export async function initData(
+  incomeService: IncomeService,
+  setIncomesCategory: Dispatch<SetStateAction<ICategoryMonthlyIncome[]>>,
+  setIncomeCategory: Dispatch<SetStateAction<IIncomeCategory[]>>,
+  setPaymentMethod: Dispatch<SetStateAction<IPaymentMethod[]>>,
+  setIncomes: Dispatch<SetStateAction<IIncome[]>>,
+  setStudents: Dispatch<SetStateAction<IStudentBasicInfo[]>>
+) {
+  initIncomesCategory(incomeService, setIncomesCategory);
+  initpaymentMethod(incomeService, setPaymentMethod);
+  initIncomes(incomeService, setIncomes);
+  initIncomeCategory(incomeService, setIncomeCategory);
+  initStudent(setStudents);
+}
+
+export async function initIncomeCategory(
+  incomeService: IncomeService,
+  setIncomeCategory: Dispatch<SetStateAction<IIncomeCategory[]>>
+) {
+  let incomeCategory = await incomeService.getIncomeCategorysList();
+  setIncomeCategory(incomeCategory);
+}
+
+export async function initpaymentMethod(
+  incomeService: IncomeService,
+  setPaymentMethod: Dispatch<SetStateAction<IPaymentMethod[]>>
+) {
+  let paymentMethodsList = await incomeService.getPaymentMethodsList();
+  setPaymentMethod(paymentMethodsList);
+}
+
+export async function initIncomes(
+  incomeService: IncomeService,
+  setIncomes: Dispatch<SetStateAction<IIncome[]>>
+) {
+  let incomes = await incomeService.getIncomes();
+  setIncomes(incomes);
+}
+
+export async function initIncomesCategory(
+  incomeService: IncomeService,
+  setIncomesCategory: Dispatch<SetStateAction<ICategoryMonthlyIncome[]>>
+) {
+  let categoryIncomes = await incomeService.getIncomesCategoryDetailed();
+  let categoryMonthlyIncome = incomeService.getMonthlyIncomes(categoryIncomes);
+  setIncomesCategory(categoryMonthlyIncome);
+}
+
+export async function initStudent(
+  setStudents: Dispatch<SetStateAction<IStudentBasicInfo[]>>
+) {
+  const studentService = container.resolve(StudentService);
+
+  let studentsBasicInfo = await studentService.getStudentsBasicInfo();
+  setStudents(studentsBasicInfo);
+}

@@ -1,7 +1,6 @@
 import "./app.css";
 import "boxicons/css/boxicons.min.css";
 import AppLayout from "./components/layout/AppLayout";
-import Courses from "./components/courses/Courses";
 import Groups from "./components/groups/Groups";
 import Student from "./components/students/Student";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,7 +11,6 @@ import GroupStudents from "./components/groups/groupStudents/GroupStudents";
 import CourseStudents from "./components/courses/courseStudents/CourseStudents";
 import { Provider } from "./context/Provider";
 import PrivateRoute from "./components/routes/PrivateRoute";
-import CashFlows from "./components/cashflow/CashFlow";
 import RoleBasedRoute from "./components/routes/RoleBasedRoute";
 import ErrorBoudary from "./error/ErrorBoudary";
 import Reports from "./components/reports/Reports";
@@ -20,6 +18,8 @@ import DailyCashflow from "./components/cashflow/dailyCashflow/DailyCashflow";
 import BookletPaymentControl from "./components/cashflow/bookletPaymentControl/BookletPaymentControl";
 import SignInRole from "./components/auth/singIn/SingInRole";
 import LogOut from "./components/auth/logOut/LogOut";
+import ChangeCourseFee from "./components/courses/changeCourseFee/ChangeCourseFee";
+import ListCourses from "./components/courses/listCourse/ListCourse";
 
 function App() {
   return (
@@ -44,8 +44,9 @@ function App() {
               <Route path="groupId/:groupId" element={<GroupCourseDetails />} />
             </Route>
             <Route path="/courses">
-              <Route index element={<Courses />} />
               <Route path="students" element={<CourseStudents />} />
+              <Route path="fee" element={<ChangeCourseFee />} />
+              <Route path="list" element={<ListCourses />} />
             </Route>
             <Route path="/groups">
               <Route index element={<Groups />} />
@@ -53,7 +54,6 @@ function App() {
             </Route>
 
             <Route path="/cashflow">
-              <Route index element={<CashFlows />} />
               <Route
                 path="bookletPaymentControl"
                 element={<BookletPaymentControl />}

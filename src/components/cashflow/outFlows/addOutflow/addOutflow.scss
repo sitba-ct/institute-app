@@ -1,11 +1,11 @@
-.errorMessage {
-  text-align: start;
+.ouflow-container {
+  display: inline;
+  &__button {
+    cursor: pointer;
+    display: inline;
+  }
 }
 
-.outflowContainer {
-  padding-top: 4px;
-
-  h6 {
-    padding-top: 10px;
-  }
+.errorMessage {
+  text-align: start;
 }

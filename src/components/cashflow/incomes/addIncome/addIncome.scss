@@ -2,9 +2,23 @@
   text-align: start;
 }
 
-.incomeContainer {
-  padding-top: 4px;
-  h6 {
-    padding-top: 10px;
+.income-container {
+  display: inline;
+
+  &__button {
+    cursor: pointer;
+    display: inline;
   }
+}
+
+.incomesPerStudentButton {
+  height: 55px;
+  width: 165px;
+  border: 1px solid rgb(97, 95, 95);
+  background-color: #3784d2d4;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  padding-top: 15px;
 }

@@ -76,7 +76,7 @@ const ListCourses = () => {
         <tbody>
           {courses.map((course) => {
             return (
-              <tr key={course.id}>
+              <tr key={course.id} className="d-flex flex-row">
                 <td
                   id="bodyName"
                   onClick={() => {

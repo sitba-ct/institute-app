@@ -1,7 +1,162 @@
+//General
+body {
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+}
+
 .outlet {
   flex: 0 0 auto;
-  width: 72%;
+  width: 80%;
   height: 100%;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Sidebar
+.sidebar-container {
+  font-family: "Segoe UI Symbol";
+  font-size: large;
+  font-weight: bold;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(146, 194, 241);
+  @include mobile {
+    width: 50px;
+  }
+  &__header {
+    display: flex;
+    padding: 15px 20px;
+    @include mobile {
+      padding: 15px 5px;
+    }
+    background-color: rgb(146, 194, 241);
+    gap: 15px;
+    &__logo {
+      color: black;
+    }
+    &__brand {
+      color: black;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+//sideBar list
+.sidebar-container {
+  &__list {
+    max-height: 70%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      /* WebKit */
+      width: 10;
+      height: 0;
+    }
+
+    &__item {
+      text-decoration: none;
+      cursor: pointer;
+      padding: 5px 20px 5px 5px;
+      margin: 5px 5px 0px 5px;
+      @include mobile {
+        padding: 4px 5px 5px 5px;
+        margin: 0px 5px 5px 5px;
+      }
+      display: flex;
+      gap: 15px;
+      color: #666;
+      transition: all 0.3s ease;
+      &__title {
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+    &__item:hover {
+      color: white;
+      background-color: #33ade173;
+      border: 1px solid #666;
+      border-radius: 5px;
+    }
+    &__itemSub {
+      margin: 2px 5px 0px 15px;
+      border-left: 1px solid #666;
+      padding: 0px 0px 0px 5px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-in;
+      &.active {
+        max-height: 200px;
+        @include mobile {
+          margin: 5px 0px 0px 5px;
+          padding: 0px 0px 0px 0px;
+        }
+      }
+      &__detail {
+        display: block;
+        margin: 5px 0px 0px 0px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #666;
+        box-sizing: border-box;
+        padding: 5px, 0px, 0px, 0px;
+        @include mobile {
+          font-size: 0px;
+          margin: 0px 0px 0px 3px;
+          color: #666;
+        }
+      }
+      &__detail:hover {
+        color: #1e6e91;
+      }
+    }
+  }
+}
+
+//sideBar footer
+.sidebar-container {
+  position: relative;
+  &__footer {
+    @include mobile {
+      display: none;
+    }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(146, 194, 241);
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px;
+    &__logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-image: url("sitba.png");
+      background-size: cover;
+      background-position: center;
+    }
+    &__data {
+      &__title {
+        font-weight: 500;
+        color: #666;
+      }
+      &__subtitle {
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.644);
+        font-size: 0.8em;
+      }
+    }
+  }
 }
 
 .outletDropdown {
