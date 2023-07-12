@@ -19,14 +19,14 @@ body {
 
 // Sidebar
 .sidebar-container {
-  font-family: "Segoe UI Symbol";
-  font-size: large;
-  font-weight: bold;
+  // font-family: "Segoe UI Symbol";
+  // font-size: large;
+  // font-weight: bold;
   width: 20%;
   height: 100%;
   background-color: rgb(146, 194, 241);
   @include mobile {
-    width: 50px;
+    width: 58px;
   }
   &__header {
     display: flex;
@@ -51,12 +51,12 @@ body {
 //sideBar list
 .sidebar-container {
   &__list {
-    max-height: 70%;
+    max-height: 90%;
     overflow-y: scroll;
     -ms-overflow-style: none;
     &::-webkit-scrollbar {
       /* WebKit */
-      width: 10;
+      width: 10px;
       height: 0;
     }
 
@@ -66,14 +66,16 @@ body {
       padding: 5px 20px 5px 5px;
       margin: 5px 5px 0px 5px;
       @include mobile {
-        padding: 4px 5px 5px 5px;
-        margin: 0px 5px 5px 5px;
+        padding: 4px 0px 5px 5px;
+        margin: 0px 0px 5px 5px;
       }
       display: flex;
       gap: 15px;
       color: #666;
       transition: all 0.3s ease;
       &__title {
+        padding-top: 4px;
+
         @include mobile {
           display: none;
         }
@@ -102,8 +104,8 @@ body {
       &__detail {
         display: block;
         margin: 5px 0px 0px 0px;
-        font-size: 15px;
-        font-weight: 600;
+        // font-size: 15px;
+        // font-weight: 600;
         text-decoration: none;
         color: #666;
         box-sizing: border-box;
