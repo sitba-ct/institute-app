@@ -51,7 +51,7 @@ export class StudentService implements IStudentService {
       .get(
         "/rest/v1/student?groupId=eq." +
           groupId +
-          "&select=id,name,surname,groupId(name),courseId(id,name)"
+          "&select=id,name,surname,courseId(id,name)"
       )
       .catch((error) => {
         console.log(error.toJSON());
