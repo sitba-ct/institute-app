@@ -16,11 +16,17 @@ const SignIn = () => {
   const [hidenText, setHidenText] = useState(true);
   const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
     useState(false);
+  const [failedMaildeliveryMessage, setFailedMaildeliveryMessage] =
+    useState(false);
 
   useEffect(() => {
     setSaveButtonEnabled(true);
     if (Object.values(errors).every((x) => x === "")) {
-      signInMethod(email, setSuccessfulMaildeliveryMessage);
+      signInMethod(
+        email,
+        setSuccessfulMaildeliveryMessage,
+        setFailedMaildeliveryMessage
+      );
     } else {
     }
   }, [errors]);
@@ -75,6 +81,11 @@ const SignIn = () => {
               {signInTranslation("signUp.textEmailSended")}
             </p>
           )}
+          {failedMaildeliveryMessage && (
+            <p className="errorMessage1">
+              {signInTranslation("signUp.textEmailFailedToSend")}
+            </p>
+          )}
         </div>
       </div>
       <div className=" ">
@@ -117,7 +128,8 @@ export default SignIn;
 
 export async function signInMethod(
   email: string,
-  setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
+  setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>,
+  setFailedMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
 ) {
   try {
     const { data, error } = await supabase.auth.signInWithOtp({
@@ -126,9 +138,24 @@ export async function signInMethod(
         emailRedirectTo: process.env.REACT_APP_EMAILREDIRECTTO,
       },
     });
-    setSuccessfulMaildeliveryMessage(true);
+    console.log(error);
+    console.log(data);
+    // if (!error) {
+    //   // Set the successful mail delivery message only if there's no error
+    //   setSuccessfulMaildeliveryMessage(true);
+    // } else {
+    //   alert("ocurrio un error comunicar con el tecnico");
+    // }
+    if (!error && data) {
+      // If there's no error and there's some data returned, assume the email was sent successfully
+      setSuccessfulMaildeliveryMessage(true);
+    } else {
+      // If there's an error, you can handle it here
+      setFailedMaildeliveryMessage(true); // Optional, in case you want to reset the state
+    }
   } catch (error: any) {
     alert(error.error_description || error.message);
+    setFailedMaildeliveryMessage(true); // If there's an exception, assume the email was not sent
   }
 }
 

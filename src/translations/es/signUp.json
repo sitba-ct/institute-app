@@ -7,6 +7,7 @@
     "newUser": "Nuevo usuario",
     "userRole": " Rol Del Usuario",
     "textEmailSended": "revise su email para su enlace de inicio de sesión",
+    "textEmailFailedToSend": "Hubo un fallo. Lo mejor sera comunicarse con el proveedor",
     "introductionText0": "Demostración de aplicación para un instituto de lengua",
     "introductionText1": "Sea libres de explorar  las",
     "introductionText2": "Manejo de estudiantes y grupos.",
