@@ -1,42 +1,31 @@
-.containerSingIn {
-  background-image: url("logo.jpg");
-  position: fixed;
-  top: 0;
-  left: 0;
+/* .container {
+  height: 100vmin;
+  width: 100vmax;
+  padding: 0, 0, 0, 0;
+  margin: 0, 0, 0, 0;
+}*/
 
-  width: 100%;
+/* .sidebar {
+  flex: 0 0 auto;
+  width: 23%;
   height: 100%;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: fixed;
+}  */
+
+.outlet {
+  flex: 0 0 auto;
+  width: 72%;
+  height: 100%;
 }
 
-.form {
-  margin-top: 7%;
-  height: auto;
-  width: 300px;
-}
-.textform {
-  margin-top: 50px;
-  height: auto;
-  width: 600px;
-}
-
-.formRole {
-  margin-top: 7%;
-  height: auto;
-  width: 300px;
-}
-
-.small-text {
-  color: rgb(0, 0, 0);
+.outletDropdown {
+  position: absolute;
+  right: 1%;
+  top: 10px;
 }
 
 .switch {
-  right: 30px;
-  top: 30px;
+  position: relative;
+  display: inline-block;
   margin: 0 5px;
 }
 
@@ -93,7 +82,7 @@ input.check-toggle-round-flat + label {
   padding: 2px;
   width: 99px;
   height: 35px;
-  background-color: #1467bab0;
+  background-color: #33ade1;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
@@ -140,33 +129,4 @@ input.check-toggle-round-flat:checked + label {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
-}
-
-.successfulMaildeliveryMessage {
-  color: green;
-}
-
-.errorMessage1 {
-  text-align: center;
-  color: red;
-}
-
-.bulletPointsText {
-  margin-left: 165px;
-}
-
-.hidenText {
-  visibility: hidden;
-  display: none;
-}
-
-.textToClickOn {
-  font-size: 16px; /* default font size */
-  transition: font-size 0.3s; /* smooth transition */
-  font-weight: bold; /* bold font weight on hover */
-  background-color: transparent;
-}
-
-.textToClickOn:hover {
-  font-size: 20px; /* increased font size on hover */
 }
