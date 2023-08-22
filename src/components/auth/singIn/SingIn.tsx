@@ -71,7 +71,7 @@ const SignIn = () => {
             <p className="errorMessage1 mt-2 fs-6 fw-bold ">{errors.email}</p>
           )}
           {successfulMaildeliveryMessage && (
-            <p className="successfulMaildeliveryMessage mt-2 fs-5 fw-bold">
+            <p className="successfulMaildeliveryMessage mt-2 fs-6 fw-bold">
               {signInTranslation("signUp.textEmailSended")}
             </p>
           )}

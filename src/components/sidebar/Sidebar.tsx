@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import INavItem from "../../services/sideBar/INavItems";
 import "../layout/appLayout.scss";
 import getSessionFromStorage from "../../services/auth/SessionService";
 import { BiBody, BiGroup, BiLogOut, BiBookAlt } from "react-icons/bi";
@@ -30,7 +29,6 @@ const Sidebar = () => {
   }, []);
 
   return (
-<<<<<<< Updated upstream
     <div className="sidebar-container">
       <div className="sidebar-container__header">
         <div className="sidebar-container__header__logo">
@@ -60,11 +58,6 @@ const Sidebar = () => {
             {sidebarTranslation("sidebar.Courses.Courses")}
           </div>
         </Link>
-=======
-    <div className="sidebar ">
-      <div className="sidebar__logo ">Sitba</div>
-      <div ref={sidebarRef} className="sidebar__menu ">
->>>>>>> Stashed changes
         <div
           className={`sidebar-container__list__itemSub ${
             expandCourses ? "active" : ""
