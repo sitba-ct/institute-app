@@ -138,24 +138,15 @@ export async function signInMethod(
         emailRedirectTo: process.env.REACT_APP_EMAILREDIRECTTO,
       },
     });
-    console.log(error);
-    console.log(data);
-    // if (!error) {
-    //   // Set the successful mail delivery message only if there's no error
-    //   setSuccessfulMaildeliveryMessage(true);
-    // } else {
-    //   alert("ocurrio un error comunicar con el tecnico");
-    // }
+
     if (!error && data) {
-      // If there's no error and there's some data returned, assume the email was sent successfully
       setSuccessfulMaildeliveryMessage(true);
     } else {
-      // If there's an error, you can handle it here
-      setFailedMaildeliveryMessage(true); // Optional, in case you want to reset the state
+      setFailedMaildeliveryMessage(true);
     }
   } catch (error: any) {
     alert(error.error_description || error.message);
-    setFailedMaildeliveryMessage(true); // If there's an exception, assume the email was not sent
+    setFailedMaildeliveryMessage(true);
   }
 }
 
