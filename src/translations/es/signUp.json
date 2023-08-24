@@ -1,10 +1,23 @@
 {
   "signUp": {
-    "createNewUser": "Crear nuevo usuario",
-    "emailAddress": "Direccion de correo",
-    "userRole": "Rol del usuario",
     "password": "Contraseña",
-    "signUp": "Registrar",
-    "successfullyCreated": "Creado con exito"
+    "signUp": "Inscribirse",
+    "neverShare": "Nunca comparta su email o contraseña con nadie.",
+    "emailAddress": "Email",
+    "newUser": "Nuevo usuario",
+    "userRole": " Rol Del Usuario",
+    "textEmailSended": "revise su email para su enlace de inicio de sesión",
+    "textEmailFailedToSend": "Hubo un fallo. Lo mejor sera comunicarse con el proveedor",
+    "introductionText0": "Demostración de aplicación para un instituto de lengua",
+    "introductionText1": "Sea libres de explorar  las",
+    "introductionText2": "Manejo de estudiantes y grupos.",
+    "introductionText3": "Registro de pago de cuotas.",
+    "introductionText5": "Visualizacion del estado financiero del estudiante/grupo.",
+    "introductionText6": "Reportes de ingresos mensuales/anuales.",
+    "introductionText7": "Alternativas de lenguajes.",
+    "introductionText8": "Comportamiento de la aplicación basado en roles.",
+    "introductionText10": "funciones.",
+    "viewRoleText1": " * Roles: cada rol posee diferentes habilitaciones. ",
+    "viewRoleText2": ""
   }
 }

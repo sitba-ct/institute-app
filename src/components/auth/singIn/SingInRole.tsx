@@ -105,7 +105,7 @@ const SignInRole = () => {
             </select>
           </div>
           <button className="btn btn-primary " onClick={() => setUserRoles()}>
-            {signInTranslation("signIn.logIn")}
+            {signInTranslation("signIn.signIn")}
           </button>
         </div>
       </div>

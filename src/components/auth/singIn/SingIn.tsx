@@ -10,17 +10,23 @@ const SignIn = () => {
   const [t, i18n] = useTranslation();
 
   const [email, setEmail] = useState("");
-  const [signInTranslation] = useTranslation("signIn");
+  const [signInTranslation] = useTranslation("signUp");
   const [saveButtonEnabled, setSaveButtonEnabled] = useState(true);
   const [errors, setErrors] = useState(new SignUpError());
   const [hidenText, setHidenText] = useState(true);
   const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
     useState(false);
+  const [failedMaildeliveryMessage, setFailedMaildeliveryMessage] =
+    useState(false);
 
   useEffect(() => {
     setSaveButtonEnabled(true);
     if (Object.values(errors).every((x) => x === "")) {
-      signInMethod(email, setSuccessfulMaildeliveryMessage);
+      signInMethod(
+        email,
+        setSuccessfulMaildeliveryMessage,
+        setFailedMaildeliveryMessage
+      );
     } else {
     }
   }, [errors]);
@@ -48,7 +54,7 @@ const SignIn = () => {
         <div className="form border  border-dark rounded   bg-gradient  p-2 text-dark">
           <div className="mb-3 ">
             <label className="fs-5 fw-bold">
-              {signInTranslation("signIn.emailAddress")}
+              {signInTranslation("signUp.emailAddress")}
             </label>
             <input
               type="email"
@@ -65,14 +71,19 @@ const SignIn = () => {
             onClick={() => errorHandle(email, setErrors)}
             disabled={saveButtonEnabled}
           >
-            {signInTranslation("signIn.logIn")}
+            {signInTranslation("signUp.signUp")}
           </button>
           {errors.email && (
             <p className="errorMessage1 mt-2 fs-6 fw-bold ">{errors.email}</p>
           )}
           {successfulMaildeliveryMessage && (
-            <p className="successfulMaildeliveryMessage mt-2 fs-5 fw-bold">
-              {signInTranslation("signIn.textEmailSended")}
+            <p className="successfulMaildeliveryMessage mt-2 fs-6 fw-bold">
+              {signInTranslation("signUp.textEmailSended")}
+            </p>
+          )}
+          {failedMaildeliveryMessage && (
+            <p className="errorMessage1">
+              {signInTranslation("signUp.textEmailFailedToSend")}
             </p>
           )}
         </div>
@@ -81,11 +92,11 @@ const SignIn = () => {
         <label className=" textform   p-2 text-dark ">
           <p className="p-0 m-0 fs-3 fw-bold"> SITBA</p>
           <p className="p-0 m-0">
-            {signInTranslation("signIn.introductionText0")}
+            {signInTranslation("signUp.introductionText0")}
           </p>
           <div className="linkFeatures d-flex justify-content-center">
             <p className="p-0 m-0">
-              {signInTranslation("signIn.introductionText1")}
+              {signInTranslation("signUp.introductionText1")}
             </p>
             <button
               className="textToClickOn p-0 ms-1"
@@ -93,7 +104,7 @@ const SignIn = () => {
                 setHidenText(hidenText ? false : true);
               }}
             >
-              {signInTranslation("signIn.introductionText10")}
+              {signInTranslation("signUp.introductionText10")}
             </button>
           </div>
           <ul
@@ -101,12 +112,12 @@ const SignIn = () => {
               hidenText ? "hidenText" : "text-start bulletPointsText  "
             }
           >
-            <li>{signInTranslation("signIn.introductionText2")}</li>
-            <li>{signInTranslation("signIn.introductionText3")}</li>
-            <li>{signInTranslation("signIn.introductionText5")}</li>
-            <li>{signInTranslation("signIn.introductionText6")}</li>
-            <li>{signInTranslation("signIn.introductionText7")}</li>
-            <li>{signInTranslation("signIn.introductionText8")}</li>
+            <li>{signInTranslation("signUp.introductionText2")}</li>
+            <li>{signInTranslation("signUp.introductionText3")}</li>
+            <li>{signInTranslation("signUp.introductionText5")}</li>
+            <li>{signInTranslation("signUp.introductionText6")}</li>
+            <li>{signInTranslation("signUp.introductionText7")}</li>
+            <li>{signInTranslation("signUp.introductionText8")}</li>
           </ul>
         </label>
       </div>
@@ -117,7 +128,8 @@ export default SignIn;
 
 export async function signInMethod(
   email: string,
-  setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
+  setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>,
+  setFailedMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
 ) {
   try {
     const { data, error } = await supabase.auth.signInWithOtp({
@@ -126,9 +138,15 @@ export async function signInMethod(
         emailRedirectTo: process.env.REACT_APP_EMAILREDIRECTTO,
       },
     });
-    setSuccessfulMaildeliveryMessage(true);
+
+    if (!error && data) {
+      setSuccessfulMaildeliveryMessage(true);
+    } else {
+      setFailedMaildeliveryMessage(true);
+    }
   } catch (error: any) {
     alert(error.error_description || error.message);
+    setFailedMaildeliveryMessage(true);
   }
 }
 

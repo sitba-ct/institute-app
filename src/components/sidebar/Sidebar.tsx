@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import INavItem from "../../services/sideBar/INavItems";
 import "../layout/appLayout.scss";
 import getSessionFromStorage from "../../services/auth/SessionService";
 import { BiBody, BiGroup, BiLogOut, BiBookAlt } from "react-icons/bi";
