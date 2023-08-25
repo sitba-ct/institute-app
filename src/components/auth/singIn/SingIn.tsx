@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import SignUpError from "../../../services/signUp/validations/SignUpError";
 import { container } from "tsyringe";
 import { SignUpValidationService } from "../../../services/signUp/validations/SignUpValidationService";
+import { AuthError } from "@supabase/supabase-js";
 
 const SignIn = () => {
   const [t, i18n] = useTranslation();
@@ -16,16 +17,16 @@ const SignIn = () => {
   const [hidenText, setHidenText] = useState(true);
   const [successfulMaildeliveryMessage, setSuccessfulMaildeliveryMessage] =
     useState(false);
-  const [failedMaildeliveryMessage, setFailedMaildeliveryMessage] =
-    useState(false);
+
+  const [error, setError] = useState<AuthError | null>(null);
 
   useEffect(() => {
     setSaveButtonEnabled(true);
     if (Object.values(errors).every((x) => x === "")) {
-      signInMethod(
+      const result = signInMethod(
         email,
         setSuccessfulMaildeliveryMessage,
-        setFailedMaildeliveryMessage
+        setError
       );
     } else {
     }
@@ -81,9 +82,9 @@ const SignIn = () => {
               {signInTranslation("signUp.textEmailSended")}
             </p>
           )}
-          {failedMaildeliveryMessage && (
+          {error && (
             <p className="errorMessage1">
-              {signInTranslation("signUp.textEmailFailedToSend")}
+              {signInTranslation("signUp.textEmailFailedToSend") + error}
             </p>
           )}
         </div>
@@ -129,7 +130,7 @@ export default SignIn;
 export async function signInMethod(
   email: string,
   setSuccessfulMaildeliveryMessage: Dispatch<SetStateAction<boolean>>,
-  setFailedMaildeliveryMessage: Dispatch<SetStateAction<boolean>>
+  setError: Dispatch<SetStateAction<AuthError | null>>
 ) {
   try {
     const { data, error } = await supabase.auth.signInWithOtp({
@@ -141,12 +142,12 @@ export async function signInMethod(
 
     if (!error && data) {
       setSuccessfulMaildeliveryMessage(true);
+      setError(error);
     } else {
-      setFailedMaildeliveryMessage(true);
+      setError(error);
     }
   } catch (error: any) {
     alert(error.error_description || error.message);
-    setFailedMaildeliveryMessage(true);
   }
 }
 

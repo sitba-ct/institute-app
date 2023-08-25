@@ -7,7 +7,7 @@
     "newUser": "New User",
     "userRole": "User Role",
     "textEmailSended": "check your inbox for you login link",
-    "textEmailFailedToSend": "Something failed. It might be best to speak with your service provider",
+    "textEmailFailedToSend": "Something went wrong :",
     "introductionText0": "Language Institute demo app.",
     "introductionText1": "Feel free to explore all the ",
     "introductionText2": "Students and group management.",
