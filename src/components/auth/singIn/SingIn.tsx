@@ -28,7 +28,6 @@ const SignIn = () => {
         setSuccessfulMaildeliveryMessage,
         setError
       );
-      console.log(result);
     } else {
     }
   }, [errors]);
