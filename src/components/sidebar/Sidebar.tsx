@@ -151,7 +151,11 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="sidebar-container__footer">
-        <div className="sidebar-container__footer__logo"></div>
+        <img
+          alt="logo"
+          className="sidebar-container__footer__logo"
+          src={require("./sitba.png")}
+        />
         <div className="sidebar-container__footer__data">
           <div className="sidebar-container__footer__data__title">
             S I T B A
