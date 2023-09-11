@@ -20,51 +20,37 @@ body {
 // Sidebar
 .sidebar-container {
   font-family: "Segoe UI Symbol";
-  font-size: large;
   font-weight: bold;
   width: 20%;
-  height: 100%;
+  height: 100vh;
   background-color: rgb(146, 194, 241);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   @include mobile {
-    width: 50px;
-  }
-  &__header {
-    display: flex;
-    padding: 15px 20px;
-    @include mobile {
-      padding: 15px 5px;
-    }
-    background-color: rgb(146, 194, 241);
-    gap: 15px;
-    &__logo {
-      color: black;
-    }
-    &__brand {
-      color: black;
-      @include mobile {
-        display: none;
-      }
-    }
+    width: 4em;
   }
 }
 
 //sideBar list
 .sidebar-container {
   &__list {
-    max-height: 70%;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
+    height: auto;
+    overflow-y: auto;
+    padding: 3em 0em 0em 1em;
+
+    // -ms-overflow-style: none;
     &::-webkit-scrollbar {
       /* WebKit */
-      width: 10;
+      width: 0;
       height: 0;
     }
 
     &__item {
       text-decoration: none;
       cursor: pointer;
-      padding: 5px 20px 5px 5px;
-      margin: 5px 5px 0px 5px;
+
       @include mobile {
         padding: 4px 5px 5px 5px;
         margin: 0px 5px 5px 5px;
@@ -123,15 +109,11 @@ body {
 
 //sideBar footer
 .sidebar-container {
-  position: relative;
   &__footer {
     @include mobile {
       display: none;
     }
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+
     background-color: rgb(146, 194, 241);
     display: flex;
     align-items: center;
