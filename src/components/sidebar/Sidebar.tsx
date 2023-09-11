@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import "../layout/appLayout.scss";
+// import "../layout/appLayout.scss";
+import "./sidebar.scss";
+
 import getSessionFromStorage from "../../services/auth/SessionService";
 import { BiBody, BiGroup, BiLogOut, BiBookAlt } from "react-icons/bi";
 import { FaCashRegister } from "react-icons/fa";
